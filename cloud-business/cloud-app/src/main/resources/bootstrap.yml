@@ -1,0 +1,14 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: cloud-app
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 43.138.76.94:8848
+      config:
+        server-addr: 43.138.76.94:8848
+        file-extension: yml

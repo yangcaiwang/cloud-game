@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="cloud-common" />
+        <module name="cloud-redis" />
+        <module name="cloud-web" />
+        <module name="cloud-datasource" />
+        <module name="cloud-app" />
+        <module name="cloud-gateway" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="auth" target="1.8" />
+      <module name="cloud-propitem" target="1.8" />
+      <module name="cloud-protobuf" target="1.8" />
+      <module name="datasource" target="1.8" />
+      <module name="framework" target="1.8" />
+      <module name="log" target="1.8" />
+      <module name="redis" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

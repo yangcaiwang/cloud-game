@@ -1,0 +1,82 @@
+22:34:53.457 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.3.Final
+22:34:59.652 [restartedMain] INFO  c.s.g.GatewayApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+22:35:00.089 [restartedMain] INFO  c.a.c.n.r.NacosServiceRegistry - [register,75] - nacos registry, DEFAULT_GROUP gateway-server 192.168.1.5:9000 register finished
+22:35:00.095 [restartedMain] INFO  c.s.g.GatewayApplication - [logStarted,61] - Started GatewayApplication in 20.779 seconds (JVM running for 29977.013)
+22:35:00.096 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=gateway-server-dev.yml, group=DEFAULT_GROUP
+22:35:00.096 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=gateway-server, group=DEFAULT_GROUP
+22:35:00.096 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=gateway-server.yml, group=DEFAULT_GROUP
+22:35:04.345 [restartedMain] INFO  c.s.g.GatewayApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+22:37:17.009 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,94] - De-registering from Nacos Server now...
+22:37:17.038 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,114] - De-registration finished.
+22:47:59.529 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.3.Final
+22:48:10.993 [restartedMain] INFO  c.s.g.GatewayApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+22:48:23.472 [restartedMain] INFO  c.a.c.n.r.NacosServiceRegistry - [register,75] - nacos registry, DEFAULT_GROUP gateway-server 192.168.1.5:9000 register finished
+22:48:23.496 [restartedMain] INFO  c.s.g.GatewayApplication - [logStarted,61] - Started GatewayApplication in 34.907 seconds (JVM running for 35.635)
+22:48:23.502 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=gateway-server-dev.yml, group=DEFAULT_GROUP
+22:48:23.503 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=gateway-server, group=DEFAULT_GROUP
+22:48:23.503 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=gateway-server.yml, group=DEFAULT_GROUP
+22:58:24.399 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,94] - De-registering from Nacos Server now...
+22:58:24.466 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,114] - De-registration finished.
+22:58:48.314 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.3.Final
+22:58:59.251 [restartedMain] INFO  c.s.g.GatewayApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+22:59:11.455 [restartedMain] INFO  c.a.c.n.r.NacosServiceRegistry - [register,75] - nacos registry, DEFAULT_GROUP cloud-gateway 192.168.1.5:9000 register finished
+22:59:11.475 [restartedMain] INFO  c.s.g.GatewayApplication - [logStarted,61] - Started GatewayApplication in 33.846 seconds (JVM running for 34.478)
+22:59:11.482 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=cloud-gateway, group=DEFAULT_GROUP
+22:59:11.482 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=cloud-gateway.yml, group=DEFAULT_GROUP
+22:59:11.483 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=cloud-gateway-dev.yml, group=DEFAULT_GROUP
+23:13:08.034 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,94] - De-registering from Nacos Server now...
+23:13:08.103 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,114] - De-registration finished.
+23:13:26.885 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.3.Final
+23:13:37.835 [restartedMain] INFO  c.s.g.GatewayApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+23:13:49.984 [restartedMain] INFO  c.a.c.n.r.NacosServiceRegistry - [register,75] - nacos registry, DEFAULT_GROUP cloud-gateway 192.168.1.5:9000 register finished
+23:13:50.004 [restartedMain] INFO  c.s.g.GatewayApplication - [logStarted,61] - Started GatewayApplication in 33.821 seconds (JVM running for 34.453)
+23:13:50.012 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=cloud-gateway, group=DEFAULT_GROUP
+23:13:50.013 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=cloud-gateway.yml, group=DEFAULT_GROUP
+23:13:50.013 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=cloud-gateway-dev.yml, group=DEFAULT_GROUP
+23:17:59.554 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,94] - De-registering from Nacos Server now...
+23:17:59.621 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,114] - De-registration finished.
+23:18:22.821 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.3.Final
+23:18:33.755 [restartedMain] INFO  c.s.g.GatewayApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+23:18:45.996 [restartedMain] INFO  c.a.c.n.r.NacosServiceRegistry - [register,75] - nacos registry, DEFAULT_GROUP cloud-gateway 192.168.1.5:9000 register finished
+23:18:46.013 [restartedMain] INFO  c.s.g.GatewayApplication - [logStarted,61] - Started GatewayApplication in 34.02 seconds (JVM running for 34.667)
+23:18:46.018 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=cloud-gateway, group=DEFAULT_GROUP
+23:18:46.019 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=cloud-gateway.yml, group=DEFAULT_GROUP
+23:18:46.019 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=cloud-gateway-dev.yml, group=DEFAULT_GROUP
+23:24:27.645 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,94] - De-registering from Nacos Server now...
+23:24:27.673 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,114] - De-registration finished.
+23:24:47.510 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.3.Final
+23:24:58.456 [restartedMain] INFO  c.s.g.GatewayApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+23:25:10.611 [restartedMain] INFO  c.a.c.n.r.NacosServiceRegistry - [register,75] - nacos registry, DEFAULT_GROUP cloud-gateway 192.168.1.5:9000 register finished
+23:25:10.633 [restartedMain] INFO  c.s.g.GatewayApplication - [logStarted,61] - Started GatewayApplication in 33.772 seconds (JVM running for 34.41)
+23:25:10.639 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=cloud-gateway, group=DEFAULT_GROUP
+23:25:10.639 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=cloud-gateway.yml, group=DEFAULT_GROUP
+23:25:10.640 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=cloud-gateway-dev.yml, group=DEFAULT_GROUP
+23:28:06.962 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,94] - De-registering from Nacos Server now...
+23:28:07.029 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,114] - De-registration finished.
+23:28:29.857 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.3.Final
+23:28:40.872 [restartedMain] INFO  c.s.g.GatewayApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+23:28:53.365 [restartedMain] INFO  c.a.c.n.r.NacosServiceRegistry - [register,75] - nacos registry, DEFAULT_GROUP cloud-gateway 192.168.1.5:9000 register finished
+23:28:53.384 [restartedMain] INFO  c.s.g.GatewayApplication - [logStarted,61] - Started GatewayApplication in 34.222 seconds (JVM running for 34.852)
+23:28:53.390 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=cloud-gateway, group=DEFAULT_GROUP
+23:28:53.391 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=cloud-gateway.yml, group=DEFAULT_GROUP
+23:28:53.391 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=cloud-gateway-dev.yml, group=DEFAULT_GROUP
+23:32:21.401 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,94] - De-registering from Nacos Server now...
+23:32:21.429 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,114] - De-registration finished.
+23:32:46.638 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.3.Final
+23:32:57.565 [restartedMain] INFO  c.s.g.GatewayApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+23:33:09.821 [restartedMain] INFO  c.a.c.n.r.NacosServiceRegistry - [register,75] - nacos registry, DEFAULT_GROUP cloud-gateway 192.168.1.5:9000 register finished
+23:33:09.842 [restartedMain] INFO  c.s.g.GatewayApplication - [logStarted,61] - Started GatewayApplication in 33.927 seconds (JVM running for 34.773)
+23:33:09.848 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=cloud-gateway, group=DEFAULT_GROUP
+23:33:09.848 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=cloud-gateway.yml, group=DEFAULT_GROUP
+23:33:09.849 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=cloud-gateway-dev.yml, group=DEFAULT_GROUP
+23:41:32.853 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,94] - De-registering from Nacos Server now...
+23:41:32.880 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,114] - De-registration finished.
+23:41:55.860 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.3.Final
+23:42:06.792 [restartedMain] INFO  c.s.g.GatewayApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+23:42:19.010 [restartedMain] INFO  c.a.c.n.r.NacosServiceRegistry - [register,75] - nacos registry, DEFAULT_GROUP cloud-gateway 192.168.1.5:9000 register finished
+23:42:19.048 [restartedMain] INFO  c.s.g.GatewayApplication - [logStarted,61] - Started GatewayApplication in 33.851 seconds (JVM running for 34.463)
+23:42:19.056 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=cloud-gateway, group=DEFAULT_GROUP
+23:42:19.057 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=cloud-gateway.yml, group=DEFAULT_GROUP
+23:42:19.060 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=cloud-gateway-dev.yml, group=DEFAULT_GROUP
+23:51:23.237 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,94] - De-registering from Nacos Server now...
+23:51:23.263 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,114] - De-registration finished.

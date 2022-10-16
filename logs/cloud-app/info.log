@@ -1,0 +1,250 @@
+22:50:03.092 [restartedMain] INFO  c.s.app.Application - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+22:50:05.164 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-9001"]
+22:50:05.165 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+22:50:05.166 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.64]
+22:50:05.262 [restartedMain] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+22:50:27.078 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-9001"]
+22:50:27.180 [restartedMain] INFO  c.a.c.n.r.NacosServiceRegistry - [register,75] - nacos registry, DEFAULT_GROUP app-server 192.168.1.5:9001 register finished
+22:50:27.196 [restartedMain] INFO  c.s.app.Application - [logStarted,61] - Started Application in 45.635 seconds (JVM running for 46.285)
+22:50:27.202 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=app-server, group=DEFAULT_GROUP
+22:50:27.203 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=app-server.yml, group=DEFAULT_GROUP
+22:50:27.203 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=app-server-dev.yml, group=DEFAULT_GROUP
+23:03:06.746 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - [destroy,205] - dynamic-datasource start closing ....
+23:03:06.747 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - [destroy,209] - dynamic-datasource all closed success,bye
+23:03:06.748 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,94] - De-registering from Nacos Server now...
+23:03:06.813 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,114] - De-registration finished.
+23:03:15.851 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2071] - {dataSource-0} closing ...
+23:03:15.851 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2071] - {dataSource-0} closing ...
+23:03:39.454 [restartedMain] INFO  c.s.app.Application - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+23:03:41.378 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-9001"]
+23:03:41.379 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+23:03:41.379 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.64]
+23:03:41.470 [restartedMain] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+23:04:03.251 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-9001"]
+23:04:03.349 [restartedMain] INFO  c.a.c.n.r.NacosServiceRegistry - [register,75] - nacos registry, DEFAULT_GROUP cloud-app 192.168.1.5:9001 register finished
+23:04:03.368 [restartedMain] INFO  c.s.app.Application - [logStarted,61] - Started Application in 45.53 seconds (JVM running for 46.137)
+23:04:03.373 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=cloud-app, group=DEFAULT_GROUP
+23:04:03.374 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=cloud-app.yml, group=DEFAULT_GROUP
+23:04:03.375 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=cloud-app-dev.yml, group=DEFAULT_GROUP
+23:06:45.616 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - [destroy,205] - dynamic-datasource start closing ....
+23:06:45.617 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - [destroy,209] - dynamic-datasource all closed success,bye
+23:06:45.618 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,94] - De-registering from Nacos Server now...
+23:06:45.683 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,114] - De-registration finished.
+23:06:54.722 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2071] - {dataSource-0} closing ...
+23:06:54.722 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2071] - {dataSource-0} closing ...
+23:07:19.890 [restartedMain] INFO  c.s.app.Application - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+23:07:22.162 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-9001"]
+23:07:22.163 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+23:07:22.163 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.64]
+23:07:22.285 [restartedMain] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+23:07:44.150 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-9001"]
+23:07:44.256 [restartedMain] INFO  c.a.c.n.r.NacosServiceRegistry - [register,75] - nacos registry, DEFAULT_GROUP cloud-app 192.168.1.5:9001 register finished
+23:07:44.271 [restartedMain] INFO  c.s.app.Application - [logStarted,61] - Started Application in 45.987 seconds (JVM running for 46.587)
+23:07:44.276 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=cloud-app, group=DEFAULT_GROUP
+23:07:44.277 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=cloud-app.yml, group=DEFAULT_GROUP
+23:07:44.277 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=cloud-app-dev.yml, group=DEFAULT_GROUP
+23:19:06.914 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - [destroy,205] - dynamic-datasource start closing ....
+23:19:06.915 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - [destroy,209] - dynamic-datasource all closed success,bye
+23:19:06.915 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,94] - De-registering from Nacos Server now...
+23:19:06.980 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,114] - De-registration finished.
+23:19:14.283 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2071] - {dataSource-0} closing ...
+23:19:14.283 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2071] - {dataSource-0} closing ...
+23:19:37.784 [restartedMain] INFO  c.s.app.Application - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+23:19:39.761 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-9001"]
+23:19:39.762 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+23:19:39.763 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.64]
+23:19:39.850 [restartedMain] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+23:20:01.784 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-9001"]
+23:20:01.887 [restartedMain] INFO  c.a.c.n.r.NacosServiceRegistry - [register,75] - nacos registry, DEFAULT_GROUP cloud-app 192.168.1.5:9001 register finished
+23:20:01.901 [restartedMain] INFO  c.s.app.Application - [logStarted,61] - Started Application in 45.575 seconds (JVM running for 46.189)
+23:20:01.906 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=cloud-app, group=DEFAULT_GROUP
+23:20:01.907 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=cloud-app.yml, group=DEFAULT_GROUP
+23:20:01.907 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=cloud-app-dev.yml, group=DEFAULT_GROUP
+23:24:23.255 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - [destroy,205] - dynamic-datasource start closing ....
+23:24:23.256 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - [destroy,209] - dynamic-datasource all closed success,bye
+23:24:23.257 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,94] - De-registering from Nacos Server now...
+23:24:23.283 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,114] - De-registration finished.
+23:24:29.673 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2071] - {dataSource-0} closing ...
+23:24:29.673 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2071] - {dataSource-0} closing ...
+23:24:53.138 [restartedMain] INFO  c.s.app.Application - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+23:24:55.059 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-9001"]
+23:24:55.060 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+23:24:55.060 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.64]
+23:24:55.142 [restartedMain] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+23:25:17.074 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-9001"]
+23:25:17.176 [restartedMain] INFO  c.a.c.n.r.NacosServiceRegistry - [register,75] - nacos registry, DEFAULT_GROUP cloud-app 192.168.1.5:9001 register finished
+23:25:17.191 [restartedMain] INFO  c.s.app.Application - [logStarted,61] - Started Application in 45.593 seconds (JVM running for 46.18)
+23:25:17.196 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=cloud-app, group=DEFAULT_GROUP
+23:25:17.196 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=cloud-app.yml, group=DEFAULT_GROUP
+23:25:17.197 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=cloud-app-dev.yml, group=DEFAULT_GROUP
+23:25:24.638 [http-nio-9001-exec-1] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+23:25:28.330 [http-nio-9001-exec-1] INFO  c.a.d.p.DruidDataSource - [init,998] - {dataSource-1} inited
+23:26:06.628 [http-nio-9001-exec-2] INFO  c.s.a.c.MyMetaObjectHandler - [insertFill,30] - start insert fill...
+23:29:19.239 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - [destroy,205] - dynamic-datasource start closing ....
+23:29:19.240 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - [destroy,209] - dynamic-datasource all closed success,bye
+23:29:19.240 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,94] - De-registering from Nacos Server now...
+23:29:19.306 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,114] - De-registration finished.
+23:29:28.338 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2071] - {dataSource-0} closing ...
+23:29:28.338 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2071] - {dataSource-1} closing ...
+23:29:28.347 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2144] - {dataSource-1} closed
+23:29:51.916 [restartedMain] INFO  c.s.app.Application - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+23:29:53.823 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-9001"]
+23:29:53.824 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+23:29:53.825 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.64]
+23:29:53.917 [restartedMain] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+23:30:16.063 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-9001"]
+23:30:16.143 [restartedMain] INFO  c.a.c.n.r.NacosServiceRegistry - [register,75] - nacos registry, DEFAULT_GROUP cloud-app 192.168.1.5:9001 register finished
+23:30:16.158 [restartedMain] INFO  c.s.app.Application - [logStarted,61] - Started Application in 45.783 seconds (JVM running for 46.41)
+23:30:16.164 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=cloud-app, group=DEFAULT_GROUP
+23:30:16.165 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=cloud-app.yml, group=DEFAULT_GROUP
+23:30:16.167 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=cloud-app-dev.yml, group=DEFAULT_GROUP
+23:32:03.513 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - [destroy,205] - dynamic-datasource start closing ....
+23:32:03.513 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - [destroy,209] - dynamic-datasource all closed success,bye
+23:32:03.514 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,94] - De-registering from Nacos Server now...
+23:32:03.541 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,114] - De-registration finished.
+23:32:10.807 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2071] - {dataSource-0} closing ...
+23:32:10.807 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2071] - {dataSource-0} closing ...
+23:32:34.348 [restartedMain] INFO  c.s.app.Application - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+23:32:37.243 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-9001"]
+23:32:37.244 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+23:32:37.244 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.64]
+23:32:37.345 [restartedMain] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+23:32:59.211 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-9001"]
+23:32:59.323 [restartedMain] INFO  c.a.c.n.r.NacosServiceRegistry - [register,75] - nacos registry, DEFAULT_GROUP cloud-app 192.168.1.5:9001 register finished
+23:32:59.347 [restartedMain] INFO  c.s.app.Application - [logStarted,61] - Started Application in 46.554 seconds (JVM running for 47.148)
+23:32:59.355 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=cloud-app, group=DEFAULT_GROUP
+23:32:59.355 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=cloud-app.yml, group=DEFAULT_GROUP
+23:32:59.356 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=cloud-app-dev.yml, group=DEFAULT_GROUP
+23:33:26.514 [http-nio-9001-exec-1] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+23:33:30.164 [http-nio-9001-exec-1] INFO  c.a.d.p.DruidDataSource - [init,998] - {dataSource-1} inited
+23:38:47.296 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - [destroy,205] - dynamic-datasource start closing ....
+23:38:47.297 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - [destroy,209] - dynamic-datasource all closed success,bye
+23:38:47.297 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,94] - De-registering from Nacos Server now...
+23:38:47.364 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,114] - De-registration finished.
+23:38:53.770 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2071] - {dataSource-0} closing ...
+23:38:53.771 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2071] - {dataSource-1} closing ...
+23:38:53.780 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2144] - {dataSource-1} closed
+23:39:21.733 [restartedMain] INFO  c.s.app.Application - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+23:40:28.786 [restartedMain] INFO  c.s.app.Application - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+23:40:30.781 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-9001"]
+23:40:30.782 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+23:40:30.782 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.64]
+23:40:30.869 [restartedMain] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+23:40:53.048 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-9001"]
+23:40:53.148 [restartedMain] INFO  c.a.c.n.r.NacosServiceRegistry - [register,75] - nacos registry, DEFAULT_GROUP cloud-app 192.168.1.5:9001 register finished
+23:40:53.162 [restartedMain] INFO  c.s.app.Application - [logStarted,61] - Started Application in 45.936 seconds (JVM running for 46.542)
+23:40:53.167 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=cloud-app, group=DEFAULT_GROUP
+23:40:53.167 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=cloud-app.yml, group=DEFAULT_GROUP
+23:40:53.168 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=cloud-app-dev.yml, group=DEFAULT_GROUP
+23:42:37.803 [http-nio-9001-exec-1] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+23:42:41.604 [http-nio-9001-exec-1] INFO  c.a.d.p.DruidDataSource - [init,998] - {dataSource-1} inited
+23:42:56.534 [http-nio-9001-exec-2] INFO  c.s.a.c.MyMetaObjectHandler - [insertFill,30] - start insert fill...
+23:45:15.656 [SpringApplicationShutdownHook] INFO  c.s.w.s.SSHContextListener - [contextDestroyed,40] - Context destroyed ... !
+
+
+
+23:45:15.667 [SpringApplicationShutdownHook] INFO  c.s.w.s.SSHContextListener - [contextDestroyed,43] - 
+
+
+成功断开SSH连接!
+
+
+
+23:45:15.677 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - [destroy,205] - dynamic-datasource start closing ....
+23:45:15.677 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - [destroy,209] - dynamic-datasource all closed success,bye
+23:45:15.677 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,94] - De-registering from Nacos Server now...
+23:45:15.743 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,114] - De-registration finished.
+23:45:24.781 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2071] - {dataSource-0} closing ...
+23:45:24.781 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2071] - {dataSource-1} closing ...
+23:45:24.790 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2144] - {dataSource-1} closed
+23:45:54.635 [restartedMain] INFO  c.s.app.Application - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+23:45:56.600 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-9001"]
+23:45:56.600 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+23:45:56.601 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.64]
+23:45:56.688 [restartedMain] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+23:45:57.114 [restartedMain] INFO  c.s.w.s.SSHContextListener - [contextInitialized,30] - 成功建立SSH连接
+23:46:19.100 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-9001"]
+23:46:19.210 [restartedMain] INFO  c.a.c.n.r.NacosServiceRegistry - [register,75] - nacos registry, DEFAULT_GROUP cloud-app 192.168.1.5:9001 register finished
+23:46:19.231 [restartedMain] INFO  c.s.app.Application - [logStarted,61] - Started Application in 46.122 seconds (JVM running for 46.74)
+23:46:19.238 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=cloud-app, group=DEFAULT_GROUP
+23:46:19.239 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=cloud-app.yml, group=DEFAULT_GROUP
+23:46:19.240 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=cloud-app-dev.yml, group=DEFAULT_GROUP
+23:46:48.249 [http-nio-9001-exec-1] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+23:46:52.043 [http-nio-9001-exec-1] INFO  c.a.d.p.DruidDataSource - [init,998] - {dataSource-1} inited
+23:47:54.065 [SpringApplicationShutdownHook] INFO  c.s.w.s.SSHContextListener - [contextDestroyed,40] - Context destroyed ... !
+
+
+
+23:47:54.074 [SpringApplicationShutdownHook] INFO  c.s.w.s.SSHContextListener - [contextDestroyed,43] - 
+
+
+成功断开SSH连接!
+
+
+
+23:47:54.087 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - [destroy,205] - dynamic-datasource start closing ....
+23:47:54.088 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - [destroy,209] - dynamic-datasource all closed success,bye
+23:47:54.089 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,94] - De-registering from Nacos Server now...
+23:47:54.154 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,114] - De-registration finished.
+23:48:01.072 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2071] - {dataSource-0} closing ...
+23:48:01.072 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2071] - {dataSource-1} closing ...
+23:48:01.082 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2144] - {dataSource-1} closed
+23:48:24.734 [restartedMain] INFO  c.s.app.Application - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+23:48:26.741 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-9001"]
+23:48:26.742 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+23:48:26.742 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.64]
+23:48:26.824 [restartedMain] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+23:48:27.245 [restartedMain] INFO  c.s.w.s.SSHContextListener - [contextInitialized,30] - 成功建立SSH连接
+23:48:49.321 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-9001"]
+23:48:49.424 [restartedMain] INFO  c.a.c.n.r.NacosServiceRegistry - [register,75] - nacos registry, DEFAULT_GROUP cloud-app 192.168.1.5:9001 register finished
+23:48:49.440 [restartedMain] INFO  c.s.app.Application - [logStarted,61] - Started Application in 46.342 seconds (JVM running for 46.993)
+23:48:49.445 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=cloud-app, group=DEFAULT_GROUP
+23:48:49.446 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=cloud-app.yml, group=DEFAULT_GROUP
+23:48:49.446 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=cloud-app-dev.yml, group=DEFAULT_GROUP
+23:49:10.114 [SpringApplicationShutdownHook] INFO  c.s.w.s.SSHContextListener - [contextDestroyed,40] - Context destroyed ... !
+
+
+
+23:49:10.129 [SpringApplicationShutdownHook] INFO  c.s.w.s.SSHContextListener - [contextDestroyed,43] - 
+
+
+成功断开SSH连接!
+
+
+
+23:49:10.225 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - [destroy,205] - dynamic-datasource start closing ....
+23:49:10.226 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - [destroy,209] - dynamic-datasource all closed success,bye
+23:49:10.226 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,94] - De-registering from Nacos Server now...
+23:49:10.293 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,114] - De-registration finished.
+23:49:19.328 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2071] - {dataSource-0} closing ...
+23:49:19.328 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2071] - {dataSource-0} closing ...
+23:49:44.091 [restartedMain] INFO  c.s.app.Application - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+23:49:46.196 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-9001"]
+23:49:46.197 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+23:49:46.197 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.64]
+23:49:46.290 [restartedMain] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+23:49:46.688 [restartedMain] INFO  c.s.w.s.SSHContextListener - [contextInitialized,30] - 成功建立SSH连接
+23:50:08.383 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-9001"]
+23:50:08.484 [restartedMain] INFO  c.a.c.n.r.NacosServiceRegistry - [register,75] - nacos registry, DEFAULT_GROUP cloud-app 192.168.1.5:9001 register finished
+23:50:08.498 [restartedMain] INFO  c.s.app.Application - [logStarted,61] - Started Application in 45.929 seconds (JVM running for 46.568)
+23:50:08.503 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=cloud-app, group=DEFAULT_GROUP
+23:50:08.504 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=cloud-app.yml, group=DEFAULT_GROUP
+23:50:08.505 [restartedMain] INFO  c.a.c.n.r.NacosContextRefresher - [registerNacosListenersForApplications,105] - listening config: dataId=cloud-app-dev.yml, group=DEFAULT_GROUP
+23:50:08.506 [restartedMain] INFO  c.s.app.Application - [main,16] - cloud-app 启动成功
+23:51:23.269 [SpringApplicationShutdownHook] INFO  c.s.w.s.SSHContextListener - [contextDestroyed,40] - Context destroyed ... !
+
+
+
+23:51:23.277 [SpringApplicationShutdownHook] INFO  c.s.w.s.SSHContextListener - [contextDestroyed,43] - 
+
+
+成功断开SSH连接!
+
+
+
+23:51:23.345 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - [destroy,205] - dynamic-datasource start closing ....
+23:51:23.345 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - [destroy,209] - dynamic-datasource all closed success,bye
+23:51:23.345 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,94] - De-registering from Nacos Server now...
+23:51:23.412 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,114] - De-registration finished.
+23:51:29.941 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2071] - {dataSource-0} closing ...
+23:51:29.941 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2071] - {dataSource-0} closing ...
