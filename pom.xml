@@ -164,11 +164,11 @@
                 <artifactId>cloud-common</artifactId>
                 <version>${version}</version>
             </dependency>
-            <dependency>
-                <groupId>com.ycw</groupId>
-                <artifactId>cloud-redis</artifactId>
-                <version>${version}</version>
-            </dependency>
+<!--            <dependency>-->
+<!--                <groupId>com.ycw</groupId>-->
+<!--                <artifactId>cloud-redis</artifactId>-->
+<!--                <version>${version}</version>-->
+<!--            </dependency>-->
             <dependency>
                 <groupId>com.ycw</groupId>
                 <artifactId>cloud-datasource</artifactId>
