@@ -1,3 +1,4 @@
+#!groovy
 //git凭证ID
 def git_auth = "8db3271f-90c6-42cc-89b7-ecbabea34afa"
 //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
