@@ -13,7 +13,6 @@ def harbor_project = "cloud-game-grpc"
 def harbor_auth = "59a2ced5-543b-4443-aa62-581e8b9be4b4"
 
 //参数构建：project_name = "cloud-app@9001;cloud-gateway@9000"
-def projectNameArray = "${project_name}".split(";")
 pipeline {
     //def mvnHome
     agent any
@@ -36,6 +35,7 @@ pipeline {
         stage('编译，打包微服务工程，上传镜像') {
             steps{
                 script {
+                    def projectNameArray = "${project_name}".split(";")
                     for(int i=0;i<projectNameArray.length;i++){
                         def submodule = projectNameArray[i];
                         //当前遍历的项目名称
