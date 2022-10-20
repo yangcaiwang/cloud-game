@@ -15,6 +15,9 @@ def harbor_auth = "59a2ced5-543b-4443-aa62-581e8b9be4b4"
 //参数构建：project_name = "cloud-app@9001;cloud-gateway@9000"
 def projectNameArray = "${project_name}".split(";")
 pipeline {
+    tools {
+        maven "M3"
+    }
     agent any
     stages{
         stage('拉取代码') {
