@@ -1,19 +1,19 @@
-//git凭证ID
-def git_auth = "8db3271f-90c6-42cc-89b7-ecbabea34afa"
-//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
-//git的url地址
-def git_url = "https://github.com/yangcaiwang/cloud-game-grpc.git"
-//镜像的版本号
-def tag = "latest"
-//Harbor的url地址
-def harbor_url = "43.138.76.94:85"
-//镜像库项目名称
-def harbor_project = "cloud-game-grpc"
-//Harbor的登录凭证ID
-def harbor_auth = "59a2ced5-543b-4443-aa62-581e8b9be4b4"
-
-//参数构建：project_name = "cloud-app@9001;cloud-gateway@9000"
-def projectNameArray = "${project_name}".split(";")
+// //git凭证ID
+// def git_auth = "8db3271f-90c6-42cc-89b7-ecbabea34afa"
+// //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
+// //git的url地址
+// def git_url = "https://github.com/yangcaiwang/cloud-game-grpc.git"
+// //镜像的版本号
+// def tag = "latest"
+// //Harbor的url地址
+// def harbor_url = "43.138.76.94:85"
+// //镜像库项目名称
+// def harbor_project = "cloud-game-grpc"
+// //Harbor的登录凭证ID
+// def harbor_auth = "59a2ced5-543b-4443-aa62-581e8b9be4b4"
+//
+// //参数构建：project_name = "cloud-app@9001;cloud-gateway@9000"
+// def projectNameArray = "${project_name}".split(";")
 // node {
 //    echo '${projectNameArray.length}'
 //    stage('拉取代码') {
