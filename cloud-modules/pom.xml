@@ -16,6 +16,5 @@
         <module>cloud-redis</module>
         <module>cloud-web</module>
         <module>cloud-datasource</module>
-        <module>cloud-datasource</module>
     </modules>
 </project>
