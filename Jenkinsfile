@@ -34,7 +34,7 @@ pipeline {
         }
         stage('编译，打包微服务工程，上传镜像') {
             steps{
-                for(int i=0;i<${projectNameArray.length};i++){
+                for(int i=0;i<projectNameArray.length;i++){
                     def submodule = projectNameArray[i];
                     //当前遍历的项目名称
                     def submoduleName = "${submodule}".split("@")[0]
