@@ -1,4 +1,3 @@
-sh "echo 进入流水线脚本"
 //git凭证ID
 def git_auth = "8db3271f-90c6-42cc-89b7-ecbabea34afa"
 //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
@@ -18,6 +17,7 @@ node {
    def selectedProjectNames = "${project_name}".split(",")
 
    stage('拉取代码') {
+      sh "echo 进入流水线脚本"
       checkout([$class: 'GitSCM', branches: [[name: "*/${branch}"]], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: "${git_auth}", url: "${git_url}"]]])
    }
       /*  stage('代码审查') {
