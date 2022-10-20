@@ -13,7 +13,7 @@ def harbor_project = "cloud-game-grpc"
 def harbor_auth = "59a2ced5-543b-4443-aa62-581e8b9be4b4"
 
 //参数构建：project_name = "cloud-app@9001;cloud-gateway@9000"
-pipeline {
+Pipeline {
     //def mvnHome
     agent any
     stages{
