@@ -15,10 +15,9 @@ def harbor_auth = "59a2ced5-543b-4443-aa62-581e8b9be4b4"
 //参数构建：project_name = "cloud-app@9001;cloud-gateway@9000"
 def projectNameArray = "${project_name}".split(";")
 node {
-
+   echo '${projectNameArray.length}'
    stage('拉取代码') {
-    checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: '8db3271f-90c6-42cc-89b7-ecbabea34afa', url: 'https://github.com/yangcaiwang/cloud-game-grpc.git']]])
-//       checkout([$class: 'GitSCM', branches: [[name: "main"]], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: "${git_auth}", url: "${git_url}"]]])
+      checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: "${git_auth}", url: "${git_url}"]]])
       echo '拉取成功'
    }
    stage('编译，安装公共子工程') {
@@ -28,7 +27,7 @@ node {
       echo '成功编译公共子工程'
    }
    stage('编译，打包微服务工程，上传镜像') {
-       for(int i=0;i<projectNameArray.length;i++){
+       for(int i=0;i<${projectNameArray.length};i++){
             def submodule = projectNameArray[i];
             //当前遍历的项目名称
             def submoduleName = "${submodule}".split("@")[0]
