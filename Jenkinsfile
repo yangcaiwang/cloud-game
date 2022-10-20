@@ -14,28 +14,27 @@ def harbor_auth = "59a2ced5-543b-4443-aa62-581e8b9be4b4"
 
 //参数构建：project_name = "cloud-app@9001;cloud-gateway@9000"
 def projectNameArray = "${project_name}".split(";")
-pipeline {
+node {
     def mvnHome
-    agent any
-    stages{
+    //agent any
+    //stages{
         stage('拉取代码') {
-            steps{
+            //steps{
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: "${git_auth}", url: "${git_url}"]]])
                 echo '拉取成功'
-            }
-
+            /}
         }
         stage('编译，安装公共子工程') {
-            steps{
+            //steps{
                 sh "mvn -f cloud-common clean install"
                 sh "mvn -f cloud-datasource clean install"
                 sh "mvn -f cloud-web clean install"
                 echo '成功编译公共子工程'
-            }
+            //}
         }
         stage('编译，打包微服务工程，上传镜像') {
-            steps{
-                script {
+            //steps{
+                //script {
                     for(int i=0;i<projectNameArray.length;i++){
                         def submodule = projectNameArray[i];
                         //当前遍历的项目名称
@@ -64,8 +63,8 @@ pipeline {
                         //执行部署脚本
                         sh "/opt/jenkins_shell/deploy.sh $harbor_url $harbor_project $submoduleName $tag $csubmodulePort"
                     }
-                }
-            }
+                //}
+            //}
         }
     }
 }
