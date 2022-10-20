@@ -64,17 +64,21 @@ node {
 
             //把镜像推送到Harbor
             withCredentials([usernamePassword(credentialsId: "${harbor_auth}", passwordVariable: 'password', usernameVariable: 'username')]) {
+                //登录到Harbor
+                sh "docker login -u ${username} -p ${password} ${harbor_url}"
 
-            //登录到Harbor
-            sh "docker login -u ${username} -p ${password} ${harbor_url}"
+                //镜像上传
+                sh "docker push ${harbor_url}/${harbor_project}/${imageName}"
 
-            //镜像上传
-            sh "docker push ${harbor_url}/${harbor_project}/${imageName}"
-
-            sh "echo 镜像上传成功"
-
-            //部署应用
-            sh "/opt/jenkins_shell/deploy.sh $harbor_url $harbor_project $currentProjectName $tag $currentProjectPort $activeProfile"
+                sh "echo 镜像上传成功"
+            }
+            //遍历所有服务器，分别部署
+            for(int j=0;j<selectedServers.length;j++){
+               //获取当前遍历的服务器名称
+               def currentServerName = selectedServers[j]
+               //执行部署脚本
+               sh "/opt/jenkins_shell/deploy.sh $harbor_url $harbor_project $currentProjectName $tag $currentProjectPort $activeProfile"
+            }
        }
    }
 }
