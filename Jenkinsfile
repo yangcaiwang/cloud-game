@@ -13,51 +13,30 @@ def harbor_project = "cloud-game-grpc"
 def harbor_auth = "59a2ced5-543b-4443-aa62-581e8b9be4b4"
 
 node {
-   //获取当前选择的项目名称
-   def selectedProjectNames = "${project_name}".split(",")
+   //参数构建：project_name = "cloud-app@9001;cloud-gateway@9000"
+   def projectNameArray = "${project_name}".split(";")
 
    stage('拉取代码') {
-      sh "echo 进入流水线脚本"
-      checkout([$class: 'GitSCM', branches: [[name: "*/${branch}"]], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: "${git_auth}", url: "${git_url}"]]])
+      checkout([$class: 'GitSCM', branches: [[name: "*/main"]], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: "${git_auth}", url: "${git_url}"]]])
+      echo '拉取成功'
    }
-      /*  stage('代码审查') {
-            for(int i=0;i<selectedProjectNames.length;i++){
-                //tensquare_eureka_server@10086
-                def projectInfo = selectedProjectNames[i];
-                //当前遍历的项目名称
-                def currentProjectName = "${projectInfo}".split("@")[0]
-                //当前遍历的项目端口
-                def currentProjectPort = "${projectInfo}".split("@")[1]
-
-                //定义当前Jenkins的SonarQubeScanner工具
-                def scannerHome = tool 'sonar-scanner'
-                //引用当前JenkinsSonarQube环境
-                withSonarQubeEnv('sonarqube') {
-                     sh """
-                             cd ${currentProjectName}
-                             ${scannerHome}/bin/sonar-scanner
-                     """
-                }
-            }
-       } */
    stage('编译，安装公共子工程') {
       sh "mvn -f cloud-common clean install"
       sh "mvn -f cloud-datasource clean install"
       sh "mvn -f cloud-web clean install"
    }
    stage('编译，打包微服务工程，上传镜像') {
-       for(int i=0;i<selectedProjectNames.length;i++){
-            //tensquare_eureka_server@10086
-            def projectInfo = selectedProjectNames[i];
+       for(int i=0;i<projectNameArray.length;i++){
+            def submodule = projectNameArray[i];
             //当前遍历的项目名称
-            def currentProjectName = "${projectInfo}".split("@")[0]
+            def submoduleName = "${submodule}".split("@")[0]
             //当前遍历的项目端口
-            def currentProjectPort = "${projectInfo}".split("@")[1]
+            def submodulePort = "${submodule}".split("@")[1]
 
-            sh "mvn -f ${currentProjectName} clean package dockerfile:build"
+            sh "mvn -f ${submoduleName} clean package dockerfile:build"
 
             //定义镜像名称
-            def imageName = "${currentProjectName}:${tag}"
+            def imageName = "${submoduleName}:${tag}"
 
             //对镜像打上标签
             sh "docker tag ${imageName} ${harbor_url}/${harbor_project}/${imageName}"
@@ -72,13 +51,8 @@ node {
 
                 sh "echo 镜像上传成功"
             }
-            //遍历所有服务器，分别部署
-            for(int j=0;j<selectedServers.length;j++){
-               //获取当前遍历的服务器名称
-               def currentServerName = selectedServers[j]
-               //执行部署脚本
-               sh "/opt/jenkins_shell/deploy.sh $harbor_url $harbor_project $currentProjectName $tag $currentProjectPort $activeProfile"
-            }
+            //执行部署脚本
+            sh "/opt/jenkins_shell/deploy.sh $harbor_url $harbor_project $submoduleName $tag $csubmodulePort"
        }
    }
 }
