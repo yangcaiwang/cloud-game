@@ -4,12 +4,13 @@ import com.springboot.app.domain.entity.User;
 import com.springboot.app.sevice.LoginService;
 import com.springboot.app.sevice.TokenService;
 import com.springboot.common.response.R;
+import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -17,6 +18,7 @@ import javax.servlet.http.HttpServletRequest;
  * @Description
  * @Date 2022/9/8 5:34 PM
  */
+@Slf4j
 @RestController
 @RequestMapping("/app")
 public class LoginController {
@@ -43,7 +45,8 @@ public class LoginController {
         return R.ok(tokenService.createToken(user), "登录成功");
     }
 
-   static class LoginParam {
+    @Data
+    static class LoginParam {
         // 用户id
         private Long userId;
         // 用户账号或手机号
@@ -51,29 +54,5 @@ public class LoginController {
 
         // 用户密码
         private String password;
-
-        public Long getUserId() {
-            return userId;
-        }
-
-        public void setUserId(Long userId) {
-            this.userId = userId;
-        }
-
-        public String getUsername() {
-            return username;
-        }
-
-        public void setUsername(String username) {
-            this.username = username;
-        }
-
-        public String getPassword() {
-            return password;
-        }
-
-        public void setPassword(String password) {
-            this.password = password;
-        }
     }
 }

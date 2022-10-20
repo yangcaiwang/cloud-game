@@ -1,5 +1,6 @@
 package com.springboot.app.sevice.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.springboot.app.domain.entity.User;
 import com.springboot.app.mapper.UserMapper;
@@ -8,7 +9,9 @@ import com.springboot.common.base.exception.GlobalException;
 import com.springboot.common.utils.ip.IpUtils;
 import com.springboot.common.utils.sign.AuthUtils;
 import com.springboot.datasource.annotation.DataSource;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
@@ -19,6 +22,7 @@ import java.time.Instant;
  *
  * @author ai-cloud
  */
+@Slf4j
 @Service
 @DataSource
 public class LoginServiceImpl implements LoginService {
@@ -34,17 +38,18 @@ public class LoginServiceImpl implements LoginService {
      */
     @Override
     public User login(Long userId, String password, HttpServletRequest request) {
-        QueryWrapper<User> userQueryWrapper = new QueryWrapper<>();
-        userQueryWrapper.ge("user_id", userId);
+        LambdaQueryWrapper<User> userQueryWrapper = new LambdaQueryWrapper<>();
+        userQueryWrapper.eq(userId != null, User::getUserId, userId);
         User user = userMapper.selectOne(userQueryWrapper);
         if (user == null) {
             User newUser = new User();
             newUser.setUserId(userId);
+            assert userId != null;
             newUser.setUserName(userId.toString());
-            newUser.setPassword(AuthUtils.encryptPassword("ycw123129"));
+            newUser.setPassword(AuthUtils.encryptPassword(password));
             newUser.setCoins(100000L);
             newUser.setIpaddr(IpUtils.getIpAddr(request));
-            newUser.setNickName(userId.toString());
+            newUser.setNickName("user" + userId);
             userMapper.insert(newUser);
             user = newUser;
         }
