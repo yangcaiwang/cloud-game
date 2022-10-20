@@ -34,33 +34,35 @@ pipeline {
         }
         stage('编译，打包微服务工程，上传镜像') {
             steps{
-                for(int i=0;i<projectNameArray.length;i++){
-                    def submodule = projectNameArray[i];
-                    //当前遍历的项目名称
-                    def submoduleName = "${submodule}".split("@")[0]
-                    //当前遍历的项目端口
-                    def submodulePort = "${submodule}".split("@")[1]
+                script {
+                    for(int i=0;i<projectNameArray.length;i++){
+                        def submodule = projectNameArray[i];
+                        //当前遍历的项目名称
+                        def submoduleName = "${submodule}".split("@")[0]
+                        //当前遍历的项目端口
+                        def submodulePort = "${submodule}".split("@")[1]
 
-                    sh "mvn -f ${submoduleName} clean package dockerfile:build"
+                        sh "mvn -f ${submoduleName} clean package dockerfile:build"
 
-                    //定义镜像名称
-                    def imageName = "${submoduleName}:${tag}"
+                        //定义镜像名称
+                        def imageName = "${submoduleName}:${tag}"
 
-                    //对镜像打上标签
-                    sh "docker tag ${imageName} ${harbor_url}/${harbor_project}/${imageName}"
+                        //对镜像打上标签
+                        sh "docker tag ${imageName} ${harbor_url}/${harbor_project}/${imageName}"
 
-                    //把镜像推送到Harbor
-                    withCredentials([usernamePassword(credentialsId: "${harbor_auth}", passwordVariable: 'password', usernameVariable: 'username')]) {
-                        //登录到Harbor
-                        sh "docker login -u ${username} -p ${password} ${harbor_url}"
+                        //把镜像推送到Harbor
+                        withCredentials([usernamePassword(credentialsId: "${harbor_auth}", passwordVariable: 'password', usernameVariable: 'username')]) {
+                            //登录到Harbor
+                            sh "docker login -u ${username} -p ${password} ${harbor_url}"
 
-                        //镜像上传
-                        sh "docker push ${harbor_url}/${harbor_project}/${imageName}"
+                            //镜像上传
+                            sh "docker push ${harbor_url}/${harbor_project}/${imageName}"
 
-                        sh "echo 镜像上传成功"
+                            sh "echo 镜像上传成功"
+                        }
+                        //执行部署脚本
+                        sh "/opt/jenkins_shell/deploy.sh $harbor_url $harbor_project $submoduleName $tag $csubmodulePort"
                     }
-                    //执行部署脚本
-                    sh "/opt/jenkins_shell/deploy.sh $harbor_url $harbor_project $submoduleName $tag $csubmodulePort"
                 }
             }
         }
