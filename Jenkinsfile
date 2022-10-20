@@ -16,7 +16,7 @@ def harbor_auth = "59a2ced5-543b-4443-aa62-581e8b9be4b4"
 def projectNameArray = "${project_name}".split(";")
 pipeline {
     tools {
-        maven "Maven 3.6.8"
+        maven "Maven 3.8.6"
     }
     agent any
     stages{
