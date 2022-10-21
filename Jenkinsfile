@@ -17,15 +17,15 @@ pipeline {
         //Harbor的登录凭证ID
         string(name: 'HARBOR_AUTH', defaultValue: '59a2ced5-543b-4443-aa62-581e8b9be4b4', description: '')
     }
-    sTAGes{
-        sTAGe('拉取代码') {
+    stages{
+        stage('拉取代码') {
             steps{
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: "${GIT_AUTH}", url: "${GIT_URL}"]]])
                 echo '拉取成功'
             }
 
         }
-        sTAGe('编译，安装公共子工程') {
+        stage('编译，安装公共子工程') {
             steps{
                 sh "mvn -f cloud-common clean install"
                 sh "mvn -f cloud-datasource clean install"
@@ -33,7 +33,7 @@ pipeline {
                 echo '成功编译公共子工程'
             }
         }
-        sTAGe('编译，打包微服务工程，上传镜像') {
+        stage('编译，打包微服务工程，上传镜像') {
             steps{
                 script {
                     def projectNameArray = "${PROJECT_NAME}".split(";")
