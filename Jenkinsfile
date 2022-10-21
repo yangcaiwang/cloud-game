@@ -26,7 +26,49 @@ pipeline {
             }
 
         }
+        stage('编译，安装公共子工程') {
+            steps{
+                sh "mvn -f cloud-common clean install"
+                sh "mvn -f cloud-datasource clean install"
+                sh "mvn -f cloud-web clean install"
+                echo '成功编译公共子工程'
+            }
+        }
+        stage('编译，打包微服务工程，上传镜像') {
+            steps{
+                script {
+                    def projectNameArray = "${PROJECT_NAME}".split(";")
+                    for(int i=0;i<projectNameArray.length;i++){
+                        def submodule = projectNameArray[i];
+                        //当前遍历的项目名称
+                        def submoduleName = "${submodule}".split("@")[0]
+                        //当前遍历的项目端口
+                        def submodulePort = "${submodule}".split("@")[1]
 
+                        sh "mvn -f ${submoduleName} clean package dockerfile:build"
+
+                        //定义镜像名称
+                        def imageName = "${submoduleName}:${TAG}"
+
+                        //对镜像打上标签
+                        sh "docker TAG ${imageName} ${HARBOR_URL}/${HARBOR_PROJECT}/${imageName}"
+
+                        //把镜像推送到Harbor
+                        withCredentials([usernamePassword(credentialsId: "${HARBOR_AUTH}", passwordVariable: 'password', usernameVariable: 'username')]) {
+                            //登录到Harbor
+                            sh "docker login -u ${username} -p ${password} ${HARBOR_URL}"
+
+                            //镜像上传
+                            sh "docker push ${HARBOR_URL}/${HARBOR_PROJECT}/${imageName}"
+
+                            sh "echo 镜像上传成功"
+                        }
+                        //执行部署脚本
+                        sh "/opt/jenkins_shell/deploy.sh $HARBOR_URL $HARBOR_PROJECT $submoduleName $TAG $csubmodulePort"
+                    }
+                }
+            }
+        }
     }
     post {
         success {
