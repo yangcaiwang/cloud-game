@@ -1,6 +1,6 @@
 pipeline {
     //def mvnHome
-    agent any
+    agent { docker 'apache-maven-3.8.6' }
     tools {
         maven 'apache-maven-3.8.6'
     }
