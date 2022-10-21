@@ -1,22 +1,35 @@
-#!groovy
-//git凭证ID
-def git_auth = "8db3271f-90c6-42cc-89b7-ecbabea34afa"
-//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
-//git的url地址
-def git_url = "https://github.com/yangcaiwang/cloud-game-grpc.git"
-//镜像的版本号
-def tag = "latest"
-//Harbor的url地址
-def harbor_url = "43.138.76.94:85"
-//镜像库项目名称
-def harbor_project = "cloud-game-grpc"
-//Harbor的登录凭证ID
-def harbor_auth = "59a2ced5-543b-4443-aa62-581e8b9be4b4"
-
-//参数构建：project_name = "cloud-app@9001;cloud-gateway@9000"
 pipeline {
     //def mvnHome
     agent any
+    //参数构建：project_name = "cloud-app@9001;cloud-gateway@9000"
+    parameters {
+        string(name: 'project_name', defaultValue: 'cloud-app@9001;cloud-gateway@9000', description: '')
+    }
+    //git凭证ID
+    parameters {
+        string(name: 'git_auth', defaultValue: '8db3271f-90c6-42cc-89b7-ecbabea34afa', description: '')
+    }
+    //git的url地址
+    parameters {
+        string(name: 'git_url', defaultValue: 'https://github.com/yangcaiwang/cloud-game-grpc.git', description: '')
+    }
+    //镜像的版本号
+    parameters {
+        string(name: 'tag', defaultValue: 'latest', description: '')
+    }
+    //Harbor的url地址
+    parameters {
+        string(name: 'harbor_url', defaultValue: '43.138.76.94:85', description: '')
+    }
+    //镜像库项目名称
+    parameters {
+        string(name: 'harbor_project', defaultValue: 'cloud-game-grpc', description: '')
+    }
+    //Harbor的登录凭证ID
+    parameters {
+        string(name: 'harbor_auth', defaultValue: '59a2ced5-543b-4443-aa62-581e8b9be4b4', description: '')
+    }
+    
     stages{
         stage('拉取代码') {
             steps{
