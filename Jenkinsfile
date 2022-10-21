@@ -70,7 +70,7 @@ pipeline {
             }
         }
     }
-    //post {
+    post {
         always {
             echo 'One way or another, I have finished' deleteDir() /* clean up our workspace */
         }
