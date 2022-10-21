@@ -19,6 +19,7 @@ pipeline {
     }
     stages{
         stage('拉取代码') {
+        echo '正在执行 pipeline'
             steps{
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: "${GIT_AUTH}", url: "${GIT_URL}"]]])
                 echo '拉取成功'
