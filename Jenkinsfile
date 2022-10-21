@@ -1,6 +1,9 @@
 pipeline {
     //def mvnHome
     agent any
+    tools {
+        maven 'apache-maven-3.8.6'
+    }
     //参数构建：PROJECT_NAME = "cloud-app@9001;cloud-gateway@9000"
     parameters {
         string(name: 'PROJECT_NAME', defaultValue: 'cloud-app@9001;cloud-gateway@9000', description: '')
