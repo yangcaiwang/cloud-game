@@ -26,14 +26,6 @@ pipeline {
             }
 
         }
-        stage('编译，安装公共子工程') {
-            steps{
-                sh "mvn -f cloud-common clean install"
-                sh "mvn -f cloud-datasource clean install"
-                sh "mvn -f cloud-web clean install"
-                echo '成功编译公共子工程'
-            }
-        }
 
     }
     post {
