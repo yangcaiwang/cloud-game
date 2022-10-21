@@ -1,6 +1,6 @@
 pipeline {
     //def mvnHome
-    agent none
+    agent any
     //参数构建：PROJECT_NAME = "cloud-app@9001;cloud-gateway@9000"
     parameters {
         string(name: 'PROJECT_NAME', defaultValue: 'cloud-app@9001;cloud-gateway@9000', description: '')
@@ -21,7 +21,7 @@ pipeline {
         stage('拉取代码') {
             steps{
                 echo '正在执行 pipeline'
-                checkout([$class: 'GitSCM', branches: [[name: 'master']], extensions: [], userRemoteConfigs: [[credentialsId: "${GIT_AUTH}", url: "${GIT_URL}"]]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: "${GIT_AUTH}", url: "${GIT_URL}"]]])
                 echo '拉取成功'
             }
 
@@ -71,9 +71,6 @@ pipeline {
         }
     }
     post {
-        always {
-            echo 'One way or another, I have finished' deleteDir() /* clean up our workspace */
-        }
         success {
             echo 'I success!'
         }
