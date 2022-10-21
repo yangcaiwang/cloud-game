@@ -80,4 +80,5 @@ pipeline {
         failure {
             echo 'I failed！'
         }
+    }
 }
