@@ -17,12 +17,13 @@
 ~~~
 cloud-game-grpc
 ├── cloud-business    --业务服务
-│       └── cloud-app      --授权对内接口
+│       └── cloud-app      --游戏大厅
 ├── cloud-gateway       --网关服务 [9000]
 ├── cloud-modules       --通用模块
-│       └── cloud-common          --通用模块
+│       └── cloud-common          --公共工具
 │       └── cloud-datasource      --多数据源
 │       └── cloud-log             --日志记录
+│       └── cloud-web             --web配置
 │       └── cloud-redis           --redis缓存
 │       └── cloud-rabbitmq        --rabbitmq消息队列
 ├── cloud-elk        --elk日志管理
@@ -32,16 +33,13 @@ cloud-game-grpc
 ├──pom.xml              --公共依赖
 ~~~
 
-- 查看注册中心注册服务信息，访问地址：http://127.0.0.1:8848/nacos
+
+- 网关，访问地址：http://127.0.0.1:9000
+
+- 查看注册中心注册服务信息，访问地址：http://127.0.0.1:8848
 
 - 查看Sentinel流量控制台，访问地址：http://127.0.0.1:8718
 
 - 日志收集系统信息，访问地址：http://127.0.0.1:5601
 
-- 可视化容器管理，访问地址：http://127.0.0.1:9000
-
-- Swagger文档信息，访问地址：http://127.0.0.1:8088/doc.html
-
 ## sql表结构
-
-## 微服务交流群

@@ -54,10 +54,14 @@
                 <artifactId>dockerfile-maven-plugin</artifactId>
                 <version>1.3.6</version>
                 <configuration>
+                    <!--打包名字-->
                     <repository>${project.artifactId}</repository>
+                    <!--定义参数,一会编写Dockerfile 会用到-->
                     <buildArgs>
                         <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
                     </buildArgs>
+                    <!--标签-->
+                    <tag>latest</tag>
                 </configuration>
             </plugin>
         </plugins>
