@@ -47,6 +47,7 @@
                             <include>${project.build.finalName}.jar</include>
                         </resource>
                     </resources>
+                    <imageTags>latest</imageTags>
                 </configuration>
             </plugin>
         </plugins>
