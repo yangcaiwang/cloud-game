@@ -15,7 +15,7 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v2
-        run:
+
           echo '=====检出成功====='
 
       - name: Set up JDK 8
@@ -23,7 +23,7 @@ jobs:
         with:
           java-version: '8'
           distribution: 'adopt'
-        run:
+
           echo '=====设置成功====='
 
       - name: Maven Clean Install
@@ -41,7 +41,7 @@ jobs:
         with:
           username: ${{ secrets.DEST_USERNAME }}
           password: ${{ secrets.DEST_TOKEN }}
-        run:
+
           echo '=====登陆成功====='
 
       - name: Build Java Docker Images and push
