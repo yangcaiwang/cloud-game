@@ -24,7 +24,8 @@ jobs:
 
       - name: Login docker-hub
         run:
-          docker login -u yangcaiwang -p ycw123129
+          docker login -u yangcaiwang
+          ycw123129 
           echo '=====登陆成功====='
 
       - name: Maven Clean Install
@@ -44,13 +45,13 @@ jobs:
           echo '=====开始构建cloud-gateway====='
           cd cloud-gateway
           mvn docker:build
-          docker push cloud-gateway:${IMAGE_TAG}
+          docker push cloud-game-grpc/cloud-gateway:${IMAGE_TAG}
           cd ..
           
           echo '=====开始构建cloud-app====='
           cd cloud-app
           mvn docker:build
-          docker push cloud-app:${IMAGE_TAG}   
+          docker push cloud-game-grpc/cloud-app:${IMAGE_TAG}   
           cd ..
           
           echo '=====结束====='
