@@ -31,20 +31,16 @@ jobs:
           mvn install -DskipTests=true && mvn package -DskipTests=true
 
       - name: Build Java Docker Images and push
-        env:
-          IMAGE_TAG: latest
         run: | 
           echo '=====开始构建镜像====='
           echo '=====开始构建cloud-gateway====='
           cd cloud-gateway
           mvn docker:build
-#          docker push cloud-game-grpc/cloud-gateway:${IMAGE_TAG}
           cd ..
           
           echo '=====开始构建cloud-app====='
           cd cloud-app
           mvn docker:build
-#          docker push cloud-game-grpc/cloud-app:${IMAGE_TAG}   
           cd ..
           
           echo '=====结束====='
