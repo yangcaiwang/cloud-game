@@ -5,20 +5,6 @@ on:
     branches:
       - master
       - feature/*
-env:
-  # tag
-  IMAGE_TAG: latest
-  # module
-  CLOUD_COMMON: cloud-common
-  CLOUD_DATASOURCE: cloud-datasource
-  CLOUD_WEB: cloud_web
-  CLOUD_GATEWAY: cloud_gateway
-  CLOUD_APP: cloud_app
-  # harbor
-  HARBOR_URL: 43.138.76.94:85
-  HARBOR_USERNAME: admin
-  HARBOR_PASSWORD: Harbor12345
-  HARBOR_PROJECT: ${GITHUB_REPOSITORY##*/}
 
 jobs:
   build:
@@ -27,17 +13,8 @@ jobs:
 
     steps:
 
-      - name: project
-        run:
-          echo ${GITHUB_REPOSITORY##*/}
-
       - name: Checkout repository
         uses: actions/checkout@v2
-
-#      - name: Checkout submodules
-#        uses: srt32/git-actions@v0.0.3
-#        with:
-#          args: git submodule update --init --recursive
 
       - name: Set up JDK 8
         uses: actions/setup-java@v2
@@ -45,38 +22,52 @@ jobs:
           java-version: '8'
           distribution: 'adopt'
 
-      - name: Build share with Maven
+      - name: Login docker-hub
         run:
-          mvn -f ${CLOUD_COMMON} clean install
-          mvn -f ${CLOUD_DATASOURCE} clean install
-          mvn -f ${CLOUD_WEB} clean install
+          docker login -u yangcaiwang -p ycw123129
+          echo '=====登陆成功====='
 
-      # gateway
-      - name:  docker image tag and push
-        env:
-          IMAGE_NAME_TAG: ${CLOUD_GATEWAY}:${IMAGE_TAG}
-          FINAL_IMAGE_NAME_TAG: ${HARBOR_URL}/${HARBOR_PROJECT}/${IMAGE_NAME_TAG}
-        run:
-          mvn -f ${CLOUD_GATEWAY} clean package dockerfile:build
-          docker TAG ${IMAGE_NAME_TAG} ${FINAL_IMAGE_NAME_TAG}
-          docker push ${FINAL_IMAGE_NAME_TAG}
-        # app
-      - name:  docker image tag and push
-        env:
-          IMAGE_NAME_TAG: ${CLOUD_APP}:${IMAGE_TAG}
-          FINAL_IMAGE_NAME_TAG: ${HARBOR_URL}/${HARBOR_PROJECT}/${IMAGE_NAME_TAG}
-        run:
-          mvn -f ${CLOUD_APP} clean package dockerfile:build
-          docker TAG ${IMAGE_NAME_TAG} ${FINAL_IMAGE_NAME_TAG}
-          docker push ${FINAL_IMAGE_NAME_TAG}
+      - name: Maven Clean Install
+        run: |
+          echo '=====开始mvn clean====='
+          mvn clean
+          
+          echo '=====开始mvn install&&package====='
+          mvn install -DskipTests=true && mvn package -DskipTests=true
 
-      - name: Login harbor
-        uses: kyberorg/wait_for_harbor@v0.1
-        with:
-          hostname: 'my.harbor.com'
-          robot: 'robot+name'
-          token: robottokenhere
-          imageProject: myProject
-          imageRepo: myImage
-          imageTag: 1.1
-          imageSha: sha256:aafdsgwqetwqtwqt
+
+      - name: Build Java Docker Images and push
+        env:
+          IMAGE_TAG: latest
+        run: | 
+          echo '=====开始构建镜像====='
+          echo '=====开始构建cloud-gateway====='
+          cd cloud-gateway
+          mvn docker:build
+          docker push cloud-gateway:${IMAGE_TAG}
+          cd ..
+          
+          echo '=====开始构建cloud-app====='
+          cd cloud-app
+          mvn docker:build
+          docker push cloud-app:${IMAGE_TAG}   
+          cd ..
+          
+          echo '=====结束====='
+
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
