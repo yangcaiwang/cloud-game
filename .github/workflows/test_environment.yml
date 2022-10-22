@@ -51,8 +51,6 @@ jobs:
 
       - name: Tag Images and push
         run: |      
-          
-          docker tag 
           docker push ${{ secrets.DEST_USERNAME }}/cloud-game-grpc/cloud-gateway:latest  
           docker push ${{ secrets.DEST_USERNAME }}/cloud-game-grpc/cloud-app:latest   
 
