@@ -28,6 +28,7 @@ jobs:
           username: yangcaiwang
           password: ycw123129
           repository: cloud-game-grpc
+          readme: "./README.md"
 
       - name: Maven Clean Install
         run: |
