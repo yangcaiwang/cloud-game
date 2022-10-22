@@ -34,10 +34,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Login harbor
-        run:
-          docker login -u ${HARBOR_USERNAME} -p ${HARBOR_PASSWORD} ${HARBOR_URL}
-
 #      - name: Checkout submodules
 #        uses: srt32/git-actions@v0.0.3
 #        with:
@@ -55,9 +51,6 @@ jobs:
           mvn -f ${CLOUD_DATASOURCE} clean install
           mvn -f ${CLOUD_WEB} clean install
 
-      - name: Login harbor
-        run:
-          docker login -u ${HARBOR_USERNAME} -p ${HARBOR_PASSWORD} ${HARBOR_URL}
       # gateway
       - name:  docker image tag and push
         env:
@@ -76,4 +69,14 @@ jobs:
           mvn -f ${CLOUD_APP} clean package dockerfile:build
           docker TAG ${IMAGE_NAME_TAG} ${FINAL_IMAGE_NAME_TAG}
           docker push ${FINAL_IMAGE_NAME_TAG}
-        
+
+      - name: Login harbor
+        uses: kyberorg/wait_for_harbor@v0.1
+        with:
+          hostname: 'my.harbor.com'
+          robot: 'robot+name'
+          token: robottokenhere
+          imageProject: myProject
+          imageRepo: myImage
+          imageTag: 1.1
+          imageSha: sha256:aafdsgwqetwqtwqt
