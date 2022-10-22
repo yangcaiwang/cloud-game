@@ -22,14 +22,6 @@ jobs:
           java-version: '8'
           distribution: 'adopt'
 
-#      - name: Login docker-hub
-#        uses: ms-jpq/sync-dockerhub-readme@v1
-#        with:
-#          username: yangcaiwang
-#          password: ycw123129
-#          repository: cloud-game-grpc
-#          readme: "./README.md"
-
       - name: Maven Clean Install
         run: |
           echo '=====开始mvn clean====='
