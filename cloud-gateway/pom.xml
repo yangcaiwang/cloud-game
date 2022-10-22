@@ -28,17 +28,10 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
 
                 <configuration>
                     <includeSystemScope>true</includeSystemScope>
-                    <mainClass>com/springboot/gateway/GatewayApplication.java</mainClass>
+                    <mainClass>com.springboot.app/GatewayApplication.java</mainClass>
                 </configuration>
             </plugin>
             <!--docker镜像build插件-->
