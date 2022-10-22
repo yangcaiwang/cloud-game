@@ -1,0 +1,70 @@
+name: Build and Deploy 
+
+on:
+  push:
+    branches:
+      - master  
+      - feature/*
+env:
+  # tag
+  IMAGE_TAG: latest
+  # module
+  CLOUD_COMMON: cloud-common
+  CLOUD_DATASOURCE: cloud-datasource
+  CLOUD_WEB: cloud_web
+  CLOUD_GATEWAY: cloud_gateway
+  CLOUD_APP: cloud_app
+  # harbor
+  HARBOR_URL: 43.138.76.94:85
+  HARBOR_USERNAME: admin
+  HARBOR_PASSWORD: Harbor12345
+  HARBOR_PROJECT: ${GITHUB_REPOSITORY##*/}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment: production
+    
+    steps:
+    
+    - name: project
+      run: 
+        echo ${GITHUB_REPOSITORY##*/}
+      
+    - name: Checkout
+      uses: actions/checkout@v3
+  
+    - name: Set up JDK 8
+      uses: actions/setup-java@v2
+      with:
+        java-version: '8'
+        distribution: 'adopt'
+        
+    - name: Build share with Maven
+      run: 
+        mvn -f ${CLOUD_COMMON} clean install
+        mvn -f ${CLOUD_DATASOURCE} clean install
+        mvn -f ${CLOUD_WEB} clean install
+
+    - name: Login harbor
+      run: 
+        docker login -u ${HARBOR_USERNAME} -p ${HARBOR_PASSWORD} ${HARBOR_URL}
+    # gateway
+    - name:  docker image tag and push
+      env: 
+        IMAGE_NAME_TAG: ${CLOUD_GATEWAY}:${IMAGE_TAG}
+        FINAL_IMAGE_NAME_TAG: ${HARBOR_URL}/${HARBOR_PROJECT}/${IMAGE_NAME_TAG}
+      run: 
+        mvn -f ${CLOUD_GATEWAY} clean package dockerfile:build
+        docker TAG ${IMAGE_NAME_TAG} ${FINAL_IMAGE_NAME_TAG}
+        docker push ${FINAL_IMAGE_NAME_TAG}
+      # app
+    - name:  docker image tag and push
+      env: 
+        IMAGE_NAME_TAG: ${CLOUD_APP}:${IMAGE_TAG}
+        FINAL_IMAGE_NAME_TAG: ${HARBOR_URL}/${HARBOR_PROJECT}/${IMAGE_NAME_TAG}
+      run: 
+        mvn -f ${CLOUD_APP} clean package dockerfile:build
+        docker TAG ${IMAGE_NAME_TAG} ${FINAL_IMAGE_NAME_TAG}
+        docker push ${FINAL_IMAGE_NAME_TAG}
+        
