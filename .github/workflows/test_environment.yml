@@ -26,8 +26,8 @@ jobs:
         uses: docker/login-action@v2
         with:
           registry: cloud-game-grpc
-          username: yangcaiwang
-          password: ycw123129
+          username: DEST_USERNAME
+          password: DEST_TOKEN
 
       - name: Maven Clean Install
         run: |
