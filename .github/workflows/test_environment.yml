@@ -51,8 +51,8 @@ jobs:
 
       - name: Tag Images and push
         run: |      
-          docker push cloud-game-grpc/cloud-gateway:latest  
-          docker push cloud-game-grpc/cloud-app:latest  
+          docker push yangcaiwang/cloud-game-grpc/cloud-gateway
+          docker push yangcaiwang/cloud-game-grpc/cloud-app  
 
 
 
