@@ -22,7 +22,6 @@ jobs:
           java-version: '8'
           distribution: 'adopt'
 
-
       - name: Maven Clean And Install
         run: |
           mvn clean
@@ -40,27 +39,17 @@ jobs:
           echo '=====开始构建cloud-gateway镜像====='
           cd cloud-gateway
           mvn docker:build
-          docker push ${{ secrets.DEST_USERNAME }}/cloud-game-grpc/cloud-gateway:${IMAGE_TAG}
+          docker push ${{ secrets.DEST_USERNAME }}/cloud-game-grpc/cloud-gateway:latest
           cd ..
           
           echo '=====开始构建cloud-app镜像====='
           cd cloud-business/cloud-app
           mvn docker:build
-          docker push ${{ secrets.DEST_USERNAME }}/cloud-game-grpc/cloud-app:${IMAGE_TAG}  
+          docker push ${{ secrets.DEST_USERNAME }}/cloud-game-grpc/cloud-app:latest  
           cd ..
           
-          echo '=====推送成功=====' 
+          echo '=====构建成功=====' 
 
-
-   
-   
-   
-   
-   
-   
-   
-   
-   
    
    
    
