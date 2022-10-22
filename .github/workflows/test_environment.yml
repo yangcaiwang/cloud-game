@@ -22,13 +22,13 @@ jobs:
           java-version: '8'
           distribution: 'adopt'
 
-      - name: Login docker-hub
-        uses: ms-jpq/sync-dockerhub-readme@v1
-        with:
-          username: yangcaiwang
-          password: ycw123129
-          repository: cloud-game-grpc
-          readme: "./README.md"
+#      - name: Login docker-hub
+#        uses: ms-jpq/sync-dockerhub-readme@v1
+#        with:
+#          username: yangcaiwang
+#          password: ycw123129
+#          repository: cloud-game-grpc
+#          readme: "./README.md"
 
       - name: Maven Clean Install
         run: |
@@ -47,13 +47,13 @@ jobs:
           echo '=====开始构建cloud-gateway====='
           cd cloud-gateway
           mvn docker:build
-          docker push cloud-game-grpc/cloud-gateway:${IMAGE_TAG}
+#          docker push cloud-game-grpc/cloud-gateway:${IMAGE_TAG}
           cd ..
           
           echo '=====开始构建cloud-app====='
           cd cloud-app
           mvn docker:build
-          docker push cloud-game-grpc/cloud-app:${IMAGE_TAG}   
+#          docker push cloud-game-grpc/cloud-app:${IMAGE_TAG}   
           cd ..
           
           echo '=====结束====='
