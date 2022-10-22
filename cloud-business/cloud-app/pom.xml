@@ -52,7 +52,7 @@
             <plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>dockerfile-maven-plugin</artifactId>
-                <version>1.3.6</version>
+                <version>1.2.0</version>
                 <configuration>
                     <!--打包名字-->
                     <repository>${project.artifactId}</repository>
