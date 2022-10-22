@@ -42,7 +42,7 @@ jobs:
         
     - name: Build share with Maven
       run: 
-        mvn -f ${CLOUD_COMMON} clean install
+        mvn -f cloud-common clean install
         mvn -f ${CLOUD_DATASOURCE} clean install
         mvn -f ${CLOUD_WEB} clean install
 
