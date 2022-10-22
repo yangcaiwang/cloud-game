@@ -16,24 +16,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-          echo '=====检出成功====='
-
       - name: Set up JDK 8
         uses: actions/setup-java@v2
         with:
           java-version: '8'
           distribution: 'adopt'
 
-          echo '=====设置成功====='
 
-      - name: Maven Clean Install
+      - name: Maven Clean And Install
         run: |
-          echo '=====开始mvn clean====='
           mvn clean
-          
-          echo '=====开始mvn install&&package====='
           mvn install -DskipTests=true && mvn package -DskipTests=true
-          
           echo '=====打包成功====='  
 
       - name: Login to DockerHub
@@ -42,28 +35,21 @@ jobs:
           username: ${{ secrets.DEST_USERNAME }}
           password: ${{ secrets.DEST_TOKEN }}
 
-          echo '=====登陆成功====='
-
       - name: Build Java Docker Images and push
         run: |
-          echo '=====开始构建镜像====='
-          echo '=====开始构建cloud-gateway====='
+          echo '=====开始构建cloud-gateway镜像====='
           cd cloud-gateway
           mvn docker:build
           docker push ${{ secrets.DEST_USERNAME }}/cloud-game-grpc/cloud-gateway:${IMAGE_TAG}
           cd ..
           
-          echo '=====上传成功=====' 
-          
-          echo '=====开始构建cloud-app====='
+          echo '=====开始构建cloud-app镜像====='
           cd cloud-business/cloud-app
           mvn docker:build
           docker push ${{ secrets.DEST_USERNAME }}/cloud-game-grpc/cloud-app:${IMAGE_TAG}  
           cd ..
           
-          echo '=====上传成功=====' 
-          
-          echo '=====CI 结束====='
+          echo '=====推送成功=====' 
 
 
    
