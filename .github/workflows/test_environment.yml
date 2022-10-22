@@ -42,13 +42,13 @@ jobs:
           echo '=====开始构建cloud-gateway====='
           cd cloud-gateway
           mvn docker:build
-          docker push cloud-game-grpc/cloud-gateway:${IMAGE_TAG}
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/cloud-game-grpc/cloud-gateway:${IMAGE_TAG}
           cd ..
           
           echo '=====开始构建cloud-app====='
           cd cloud-business/cloud-app
           mvn docker:build
-          docker push cloud-game-grpc/cloud-app:${IMAGE_TAG}  
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/cloud-game-grpc/cloud-app:${IMAGE_TAG}  
           cd ..
           
           echo '=====结束====='
