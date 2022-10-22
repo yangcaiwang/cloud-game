@@ -39,16 +39,35 @@ jobs:
           echo '=====开始构建cloud-gateway镜像====='
           cd cloud-gateway
           mvn docker:build
-          docker push ${{ secrets.DEST_USERNAME }}/cloud-game-grpc/cloud-gateway:latest
+          docker push ${{ secrets.DEST_USERNAME }}/cloud-game-grpc:cloud-gateway:latest
           cd ..
           
           echo '=====开始构建cloud-app镜像====='
           cd cloud-business/cloud-app
           mvn docker:build
-          docker push ${{ secrets.DEST_USERNAME }}/cloud-game-grpc/cloud-app:latest  
+          docker push ${{ secrets.DEST_USERNAME }}/cloud-game-grpc:cloud-app:latest  
           cd ..
           
           echo '=====构建成功=====' 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
    
    
