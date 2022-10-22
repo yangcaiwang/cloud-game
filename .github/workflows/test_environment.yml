@@ -23,10 +23,11 @@ jobs:
           distribution: 'adopt'
 
       - name: Login docker-hub
-        run:
-          docker login -u yangcaiwang
-          ycw123129 
-          echo '=====登陆成功====='
+        uses: ms-jpq/sync-dockerhub-readme@v1
+        with:
+          username: yangcaiwang
+          password: ycw123129
+          repository: cloud-game-grpc
 
       - name: Maven Clean Install
         run: |
