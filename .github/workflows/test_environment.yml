@@ -39,7 +39,7 @@ jobs:
           cd ..
           
           echo '=====开始构建cloud-app====='
-          cd cloud-app
+          cd cloud-business/cloud-app
           mvn docker:build
           cd ..
           
