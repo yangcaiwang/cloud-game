@@ -28,7 +28,7 @@
         <!--spring-->
         <spring-cloud.version>2021.0.3</spring-cloud.version>
         <spring-cloud-alibaba.version>2021.0.1.0</spring-cloud-alibaba.version>
-        <spring-boot-dependencies.version>2.7.1</spring-boot-dependencies.version>
+        <spring-boot-dependencies.version>2.7.3</spring-boot-dependencies.version>
         <!--data-->
         <ssh.version>0.1.55</ssh.version>
         <druid.version>1.2.8</druid.version>

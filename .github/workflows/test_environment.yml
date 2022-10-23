@@ -51,10 +51,10 @@ jobs:
 
       - name: Tag Images and push
         run: |      
-          docker tag yangcaiwang/cloud-game-grpc/cloud-gateway:latest yangcaiwang/cloud-game-grpc:cloud-gateway
-          docker tag yangcaiwang/cloud-game-grpc/cloud-app:latest yangcaiwang/cloud-game-grpc:cloud-app
-          docker push yangcaiwang/cloud-game-grpc:cloud-gateway
-          docker push yangcaiwang/cloud-game-grpc:cloud-app
+          docker tag yangcaiwang/cloud-game-grpc/cloud-gateway:latest yangcaiwang/cloud-game-grpc:cloud-gateway-latest
+          docker tag yangcaiwang/cloud-game-grpc/cloud-app:latest yangcaiwang/cloud-game-grpc:cloud-app-latest
+          docker push yangcaiwang/cloud-game-grpc:cloud-gateway-latest
+          docker push yangcaiwang/cloud-game-grpc:cloud-app-latest
 
 
 
