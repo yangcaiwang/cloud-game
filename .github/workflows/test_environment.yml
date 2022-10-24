@@ -51,10 +51,10 @@ jobs:
 
       - name: Tag Images and push
         run: |
-          docker tag cloud-gateway:latest yangcaiwang/:cloud-gateway:latest
-          docker tag cloud-app:latest yangcaiwang/:cloud-app:latest
-          docker push yangcaiwang/:cloud-gateway:latest
-          docker push yangcaiwang/:cloud-app:latest
+          docker tag cloud-gateway:latest yangcaiwang/cloud-gateway:latest
+          docker tag cloud-app:latest yangcaiwang/cloud-app:latest
+          docker push yangcaiwang/cloud-gateway:latest
+          docker push yangcaiwang/cloud-app:latest
 
 
 
