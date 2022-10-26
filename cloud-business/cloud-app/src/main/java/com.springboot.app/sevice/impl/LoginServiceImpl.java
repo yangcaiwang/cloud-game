@@ -1,7 +1,6 @@
 package com.springboot.app.sevice.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.springboot.app.domain.entity.User;
 import com.springboot.app.mapper.UserMapper;
 import com.springboot.app.sevice.LoginService;
@@ -11,11 +10,9 @@ import com.springboot.common.utils.sign.AuthUtils;
 import com.springboot.datasource.annotation.DataSource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
-import java.time.Instant;
 
 /**
  * 登录校验方法
@@ -45,7 +42,7 @@ public class LoginServiceImpl implements LoginService {
             User newUser = new User();
             newUser.setUserId(userId);
             assert userId != null;
-            newUser.setUserName(userId.toString());
+            newUser.setUsername(userId.toString());
             newUser.setPassword(AuthUtils.encryptPassword(password));
             newUser.setCoins(100000L);
             newUser.setIpaddr(IpUtils.getIpAddr(request));

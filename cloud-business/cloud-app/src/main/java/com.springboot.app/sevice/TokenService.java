@@ -23,9 +23,9 @@ public class TokenService {
      */
     public Map<String, Object> createToken(User user) {
         Long userId = user.getUserId();
-        String userName = user.getUserName();
+        String userName = user.getUsername();
         user.setUserId(userId);
-        user.setUserName(userName);
+        user.setUsername(userName);
         user.setIpaddr(IpUtils.getIpAddr(ServletUtils.getRequest()));
 
         // Jwt存储信息
