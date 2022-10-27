@@ -22,14 +22,13 @@ jobs:
           java-version: '8'
           distribution: 'adopt'
 
-      - name: Cache Maven Repos
-        uses: actions/cache@v2
-        with:
-          path: ~/.m2/repository
-          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-          restore-keys: |
-            ${{ runner.os }}-maven-
-
+#      - name: Cache Maven Repos
+#        uses: actions/cache@v2
+#        with:
+#          path: ~/.m2/repository
+#          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+#          restore-keys: |
+#            ${{ runner.os }}-maven-
       - name: Maven Clean And Install
         run: |
           mvn clean
