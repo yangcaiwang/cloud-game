@@ -10,15 +10,10 @@ spring:
     # 环境配置
     active: dev
   cloud:
+    # k8s 内部nacos服务
     nacos:
       discovery:
-        # 服务注册地址
-        server-addr: 43.138.76.94:8848
+        server-addr: 10.10.67.74:8848
       config:
-        # 配置中心地址
-        server-addr: 43.138.76.94:8848
-        # 配置文件格式
+        server-addr: 10.10.67.74:8848
         file-extension: yml
-        # 共享配置
-#        shared-configs:
-#          - application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
