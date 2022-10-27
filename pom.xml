@@ -26,8 +26,9 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <!--spring-->
-        <spring-cloud.version>2021.0.3</spring-cloud.version>
-        <spring-cloud-alibaba.version>2021.0.1.0</spring-cloud-alibaba.version>
+        <spring-cloud.version>2021.0.4</spring-cloud.version>
+        <!--这个2.2.7.RELEASE 版本的服务端对应客户端nacos 2.0.3（k8s中的版本不对应会报错: com.alibaba.nacos.api.exception.NacosException: Client not connected,current status:SHUTDOWN-->
+        <spring-cloud-alibaba.version>2.2.7.RELEASE</spring-cloud-alibaba.version>
         <spring-boot-dependencies.version>2.7.3</spring-boot-dependencies.version>
         <!--data-->
         <ssh.version>0.1.55</ssh.version>
@@ -200,23 +201,11 @@
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>com.alibaba.nacos</groupId>
-                    <artifactId>nacos-client</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <!-- SpringCloud Alibaba nacos Config -->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>com.alibaba.nacos</groupId>
-                    <artifactId>nacos-client</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <dependency>
             <groupId>com.alibaba.nacos</groupId>
