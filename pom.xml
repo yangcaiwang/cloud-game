@@ -26,11 +26,11 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <!--spring-->
-        <spring-cloud.version>Hoxton.SR12</spring-cloud.version>
+        <spring-cloud.version>2021.0.1</spring-cloud.version>
         <!--这个2.2.7.RELEASE 版本的服务端对应客户端nacos 2.0.3（k8s中的版本不对应会报错: com.alibaba.nacos.api.exception.NacosException: Client not connected,current status:SHUTDOWN-->
-        <spring-cloud-alibaba.version>2.2.7.RELEASE</spring-cloud-alibaba.version>
-        <nacos-client>2.0.3</nacos-client>
-        <spring-boot-dependencies.version>2.3.12.RELEASE</spring-boot-dependencies.version>
+        <spring-cloud-alibaba.version>2021.0.1.0</spring-cloud-alibaba.version>
+        <nacos-client>1.4.2</nacos-client>
+        <spring-boot-dependencies.version>2.6.3</spring-boot-dependencies.version>
         <!--data-->
         <ssh.version>0.1.55</ssh.version>
         <druid.version>1.2.8</druid.version>
@@ -193,10 +193,10 @@
             <optional>true</optional>
         </dependency>
         <!--spring cloud Hoxton.SR12 以后(如：spring cloud 2020.0.1)需要加入bootstrap启动器-->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.cloud</groupId>-->
-<!--            <artifactId>spring-cloud-starter-bootstrap</artifactId>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bootstrap</artifactId>
+        </dependency>
 
         <!-- SpringCloud Alibaba nacos discovery -->
         <dependency>
