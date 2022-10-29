@@ -4,13 +4,16 @@ import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceBuilder;
 import com.springboot.common.enums.DataSourcesType;
 import com.springboot.common.context.DynamicDataSourceContextHolder;
+import com.springboot.datasource.aspect.DynamicDataSourceAspect;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.Primary;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
 import org.springframework.stereotype.Component;
 
@@ -24,14 +27,23 @@ import java.util.Map;
  */
 
 @Configuration
+@Import(DynamicDataSourceAspect.class)
 public class DruidDataSourceConfig {
     /**
      * 获取数据源（依赖于 spring）
      * 定义一个类继承AbstractRoutingDataSource实现determineCurrentLookupKey方法，该方法可以实现数据库的动态切换
      */
     static class DynamicDataSource extends AbstractRoutingDataSource {
-        public static DynamicDataSource build() {
-            return new DynamicDataSource();
+        private final Map<Object, Object> datasources;
+
+        public DynamicDataSource() {
+            datasources = new HashMap<>();
+            //额外数据源配置 TargetDataSources
+            super.setTargetDataSources(datasources);
+        }
+
+        public <T extends DataSource> void addDataSource(DataSourcesType key, T data) {
+            datasources.put(key, data);
         }
 
         /**
@@ -108,28 +120,25 @@ public class DruidDataSourceConfig {
         }
     }
 
-
     /**
      * 主库
      */
-    @Bean(name = "masterDataSource")
-    @ConfigurationProperties("spring.datasource.druid.master")
-    public DataSource masterDataSource(DataSourceProperties dataSourceProperties) {
+    @Bean(name = "coreDataSource")
+    @ConfigurationProperties("spring.datasource.druid.core")
+    public DataSource coreDataSource(DataSourceProperties dataSourceProperties) {
         return dataSourceProperties.setDataSource(DruidDataSourceBuilder.create().build());
     }
-
 
     /**
      * 从库
      */
-    @Bean(name = "slaveDataSource")
-    @ConditionalOnProperty(prefix = "spring.datasource.druid.slave", name = "enable", havingValue = "true")
+    @Bean(name = "logsDataSource")
+    @ConditionalOnProperty(prefix = "spring.datasource.druid.logs", name = "enable", havingValue = "true")
     //是否开启数据源开关---若不开启 默认适用默认数据源
-    @ConfigurationProperties("spring.datasource.druid.slave")
-    public DataSource slaveDataSource(DataSourceProperties dataSourceProperties) {
+    @ConfigurationProperties("spring.datasource.druid.logs")
+    public DataSource logsDataSource(DataSourceProperties dataSourceProperties) {
         return dataSourceProperties.setDataSource(DruidDataSourceBuilder.create().build());
     }
-
 
     /**
      * 设置数据源
@@ -139,18 +148,19 @@ public class DruidDataSourceConfig {
      */
     @Bean(name = "dynamicDataSource")
     @Primary
-    public DynamicDataSource dynamicDataSource(@Qualifier("masterDataSource") DataSource masterDataSource, @Qualifier("slaveDataSource") DataSource slaveDataSource) {
-        Map<Object, Object> targetDataSources = new HashMap<>();
-        DynamicDataSource dynamicDataSource = DynamicDataSource.build();
-
-        targetDataSources.put(DataSourcesType.MASTER.name(), masterDataSource);
-        targetDataSources.put(DataSourcesType.SLAVE.name(), slaveDataSource);
+    public DynamicDataSource dynamicDataSource(@Qualifier("coreDataSource") DataSource coreDataSource, @Qualifier("logsDataSource") DataSource logsDataSource) {
+        DynamicDataSource dynamicDataSource = new DynamicDataSource();
+        dynamicDataSource.addDataSource(DataSourcesType.CORE, coreDataSource);
+        dynamicDataSource.addDataSource(DataSourcesType.LOGS, logsDataSource);
         //默认数据源配置 DefaultTargetDataSource
-        dynamicDataSource.setDefaultTargetDataSource(masterDataSource);
-        //额外数据源配置 TargetDataSources
-        dynamicDataSource.setTargetDataSources(targetDataSources);
+        dynamicDataSource.setDefaultTargetDataSource(coreDataSource);
         dynamicDataSource.afterPropertiesSet();
         return dynamicDataSource;
+    }
+
+    @Bean // 将数据源纳入spring事物管理
+    public DataSourceTransactionManager transactionManager(@Qualifier("dynamicDataSource") DynamicDataSource dynamicDataSource) {
+        return new DataSourceTransactionManager(dynamicDataSource);
     }
 }
 

@@ -32,16 +32,16 @@ public class DynamicDataSourceAspect {
         //获取要切换的数据源
         DataSource dataSource = targetMethod.getAnnotation(DataSource.class);
         if (dataSource != null) {
-            System.err.println("正在使用的数据源是: "+dataSource.name());
-            DynamicDataSourceContextHolder.setDataSourceType(dataSource.name().name());
+            System.err.println("正在使用的数据源是: " + dataSource.name());
+            DynamicDataSourceContextHolder.setDataSourceType(dataSource.name());
         } else {
             //看类上有没有注解
             Class<?> aClass = targetMethod.getDeclaringClass();
             dataSource = aClass.getAnnotation(DataSource.class);
             if (dataSource != null) {
-                System.err.println("正在使用的数据源是:=> "+dataSource.name());
-                DynamicDataSourceContextHolder.setDataSourceType(dataSource.name().name());
-            }else {
+                System.err.println("正在使用的数据源是:=> " + dataSource.name());
+                DynamicDataSourceContextHolder.setDataSourceType(dataSource.name());
+            } else {
                 System.err.println("正在使用默认数据源");
             }
         }
@@ -60,6 +60,5 @@ public class DynamicDataSourceAspect {
         Signature signature = proceedingJoinPoint.getSignature();
         MethodSignature methodSignature = (MethodSignature) signature;
         return methodSignature.getMethod();
-//        return pjp.getTarget().getClass().getDeclaredMethod(agentMethod.getName(), agentMethod.getParameterTypes());
     }
 }
