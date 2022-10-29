@@ -15,6 +15,9 @@
       <option name="ADDITIONAL_TAGS" value="desc,property" />
     </inspection_tool>
     <inspection_tool class="Lombok" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="ShellCheck" enabled="true" level="ERROR" enabled_by_default="true">
+      <shellcheck_settings value="SC2039,SC2125,SC2206" />
+    </inspection_tool>
     <inspection_tool class="com.haulmont.jpb.EntityIdMissingInspection" enabled="false" level="WARNING" enabled_by_default="false" />
   </profile>
 </component>

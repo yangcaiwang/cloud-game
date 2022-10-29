@@ -1,5 +1,3 @@
-name: Build and Deploy
-
 on:
   push:
     branches:
@@ -22,26 +20,21 @@ jobs:
           java-version: '8'
           distribution: 'adopt'
 
-#      - name: Cache Maven Repos
-#        uses: actions/cache@v2
-#        with:
-#          path: ~/.m2/repository
-#          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-#          restore-keys: |
-#            ${{ runner.os }}-maven-
+      - name: Cache Maven Repos
+        uses: actions/cache@v2
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
+
       - name: Maven Clean And Install
         run: |
           mvn clean
           mvn install -DskipTests=true && mvn package -DskipTests=true
           echo '=====打包成功====='  
 
-      - name: Login to DockerHub
-        uses: docker/login-action@v2
-        with:
-          username: ${{ secrets.DEST_USERNAME }}
-          password: ${{ secrets.DEST_TOKEN }}
-
-      - name: Build Java Docker Images and push
+      - name: Build Docker Images
         run: |
           echo '=====开始构建cloud-gateway镜像====='
           cd cloud-gateway
@@ -56,32 +49,36 @@ jobs:
           
           echo '=====构建成功=====' 
 
-      - name: Tag Images and push
+      - name: Login to DockerHub
+          uses: docker/login-action@v2
+          with:
+            username: ${{ secrets.DOCKER_USERNAME }}
+            password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Images tag and push
         run: |
           docker tag cloud-gateway:latest yangcaiwang/cloud-gateway:latest
           docker tag cloud-app:latest yangcaiwang/cloud-app:latest
           docker push yangcaiwang/cloud-gateway:latest
           docker push yangcaiwang/cloud-app:latest
 
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   
-   
-   
-   
-   
-   
+      - name: deploy by shh
+        env:
+          PROJECTS: "cloud-gateway;9000,cloud-app;9001"
+          TAG: latest
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            cd /opt/cloud-game-grpc
+            chmod +x deploy.sh
+            ./deploy.sh ${{ secrets.DOCKER_USERNAME }} ${{ secrets.DOCKER_PASSWORD }} ${PROJECTS} ${TAG}
+            echo '执行完成'
