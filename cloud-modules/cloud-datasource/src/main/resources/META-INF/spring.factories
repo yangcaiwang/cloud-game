@@ -1,3 +1,5 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  com.springboot.datasource.aspect.DynamicDataSourceAspect,\
-  com.springboot.datasource.config.DruidDataSourceConfig
+  com.ycw.datasource.aspect.DynamicDataSourceAspect,\
+  com.ycw.datasource.config.DruidDataSourceConfig,\
+  com.ycw.datasource.config.MybatisPlusConfig,\
+  com.ycw.datasource.config.MyMetaObjectHandler

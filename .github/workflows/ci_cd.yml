@@ -42,10 +42,14 @@ jobs:
           mvn docker:build
           cd ..
           
-          echo '=====开始构建cloud-app镜像====='
-          cd cloud-business/cloud-app
+          echo '=====开始构建cloud-lobby镜像====='
+          cd cloud-app/cloud-lobby
           mvn docker:build
-
+          cd ../..
+          
+          echo '=====开始构建cloud-auth镜像====='
+          cd cloud-auth
+          mvn docker:build
           cd ..
           
           echo '=====构建成功=====' 
@@ -59,9 +63,13 @@ jobs:
       - name: Images tag and push
         run: |
           docker tag cloud-gateway:latest yangcaiwang/cloud-gateway:latest
-          docker tag cloud-app:latest yangcaiwang/cloud-app:latest
           docker push yangcaiwang/cloud-gateway:latest
-          docker push yangcaiwang/cloud-app:latest
+          
+          docker tag cloud-lobby:latest yangcaiwang/cloud-lobby:latest
+          docker push yangcaiwang/cloud-lobby:latest
+          
+          docker tag cloud-auth:latest yangcaiwang/cloud-auth:latest
+          docker push yangcaiwang/cloud-auth:latest 
 
   deploy:
     name: Deploy
@@ -71,7 +79,7 @@ jobs:
 
       - name: deploy by shh
         env:
-          PROJECTS: "cloud-gateway;9000,cloud-app;9001"
+          PROJECTS: "cloud-gateway;9000,cloud-lobby;9001,cloud-auth;9002"
           TAG: latest
         uses: appleboy/ssh-action@master
         with:
@@ -80,7 +88,7 @@ jobs:
           password: ${{ secrets.SSH_PASSWORD }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            cd /opt/cloud-game-grpc
+            cd /opt/cloud-game
             chmod +x deploy.sh
             ./deploy.sh ${{ secrets.DOCKER_USERNAME }} ${{ secrets.DOCKER_PASSWORD }} ${PROJECTS} ${TAG}
             echo '执行完成'

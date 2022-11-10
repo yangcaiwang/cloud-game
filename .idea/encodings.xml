@@ -3,28 +3,45 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/auth/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/auth/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloud-business/cloud-app/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloud-business/cloud-app/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloud-business/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloud-business/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-app/cloud-lobby/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-app/cloud-lobby/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-app/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-app/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-auth/cloud-core/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-auth/cloud-core/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-auth/src/java/main/com.ycw.auth" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-auth/src/java/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-auth/src/java/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-auth/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-auth/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-gateway/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-gateway/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-modules/cloud-common/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-modules/cloud-common/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-modules/cloud-datasource/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloud-modules/cloud-datasource/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-modules/cloud-datasource/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloud-modules/cloud-datasource/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-modules/cloud-operatelog/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-modules/cloud-operatelog/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-modules/cloud-ops/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-modules/cloud-ops/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-modules/cloud-propitem/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-modules/cloud-propitem/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-modules/cloud-protobuf/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-modules/cloud-protobuf/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-modules/cloud-redis/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-modules/cloud-redis/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-modules/cloud-security/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-modules/cloud-security/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-modules/cloud-web/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-modules/cloud-web/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-modules/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-modules/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-ops/cloud-security/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-ops/cloud-security/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-ops/cloud-system/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-ops/cloud-system/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-ops/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-ops/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/framework/auth/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/framework/datasource/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/framework/datasource/src/main/resources" charset="UTF-8" />

@@ -1,6 +1,10 @@
 <component name="InspectionProjectProfileManager">
   <profile version="1.0">
     <option name="myName" value="Project Default" />
+    <inspection_tool class="ConstantConditions" enabled="false" level="WARNING" enabled_by_default="false">
+      <option name="SUGGEST_NULLABLE_ANNOTATIONS" value="false" />
+      <option name="DONT_REPORT_TRUE_ASSERT_STATEMENTS" value="false" />
+    </inspection_tool>
     <inspection_tool class="FieldCanBeLocal" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="EXCLUDE_ANNOS">
         <value>
@@ -12,12 +16,15 @@
       <option name="IGNORE_FIELDS_USED_IN_MULTIPLE_METHODS" value="true" />
     </inspection_tool>
     <inspection_tool class="JavadocDeclaration" enabled="true" level="WARNING" enabled_by_default="true">
-      <option name="ADDITIONAL_TAGS" value="desc,property" />
+      <option name="ADDITIONAL_TAGS" value="desc,property,Classname,Description" />
     </inspection_tool>
     <inspection_tool class="Lombok" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="PlaceholderCountMatchesArgumentCount" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="RawUseOfParameterizedType" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="ShellCheck" enabled="true" level="ERROR" enabled_by_default="true">
       <shellcheck_settings value="SC2039,SC2125,SC2206" />
     </inspection_tool>
+    <inspection_tool class="WriteOnlyObject" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="com.haulmont.jpb.EntityIdMissingInspection" enabled="false" level="WARNING" enabled_by_default="false" />
   </profile>
 </component>

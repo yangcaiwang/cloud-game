@@ -1,5 +1,0 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  com.springboot.web.config.ApplicationConfig,\
-  com.springboot.web.config.WebMvcConfig,\
-  com.springboot.web.handler.GlobalExceptionHandler,\
-  com.springboot.web.ssh.SSHContextListener

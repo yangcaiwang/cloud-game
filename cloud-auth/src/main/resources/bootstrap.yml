@@ -1,0 +1,28 @@
+server:
+  port: 9002
+spring:
+  application:
+    name: cloud-auth
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      username: nacos
+      password: nacos
+      discovery:
+        server-addr: 43.138.76.94:8848
+      config:
+        server-addr: 43.138.76.94:8848
+        file-extension: yml
+        namespace: public
+        # 共享配置文件
+        shared-configs:
+          - data-id: share-config.yml
+            group: DEFAULT_GROUP
+            refresh: true
+        # 常规配置文件
+        # 优先级大于 shared-configs，在 shared-configs 之后加载，会覆盖
+        extension-configs:
+          - data-id: spring-mail.yml
+            group: DEFAULT_GROUP
+            refresh: true

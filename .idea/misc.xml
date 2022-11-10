@@ -14,6 +14,17 @@
         <option value="$PROJECT_DIR$/cloud-modules/pom.xml" />
       </list>
     </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/cloud-auth/cloud-core/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud-auth/cloud-security/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud-modules/cloud-ops/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud-modules/cloud-security/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud-modules/cloud-web/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud-ops/cloud-security/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud-ops/pom.xml" />
+      </set>
+    </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />

@@ -1,4 +1,4 @@
-# cloud-game-grpc
+# cloud-game
 高性能的微服务框架
 
 ## 平台简介
@@ -15,7 +15,7 @@
 ## 目录结构
 
 ~~~
-cloud-game-grpc
+cloud-game
 ├── cloud-business    --业务服务
 │       └── cloud-app      --游戏大厅
 ├── cloud-gateway       --网关服务 [9000]
@@ -23,7 +23,6 @@ cloud-game-grpc
 │       └── cloud-common          --公共工具
 │       └── cloud-datasource      --多数据源
 │       └── cloud-log             --日志记录
-│       └── cloud-web             --web配置
 │       └── cloud-redis           --redis缓存
 │       └── cloud-rabbitmq        --rabbitmq消息队列
 ├── cloud-elk        --elk日志管理

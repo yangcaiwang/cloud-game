@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+          <parent>
+                    <artifactId>cloud-game</artifactId>
+                    <groupId>com.ycw</groupId>
+                    <version>1.0-SNAPSHOT</version>
+          </parent>
+          <modelVersion>4.0.0</modelVersion>
+          <artifactId>cloud-auth</artifactId>
+          <packaging>jar</packaging>
+          <description>验证中心</description>
+          <dependencies>
+                    <dependency>
+                              <groupId>org.springframework.boot</groupId>
+                              <artifactId>spring-boot-starter</artifactId>
+                    </dependency>
+                    <dependency>
+                              <groupId>org.springframework.boot</groupId>
+                              <artifactId>spring-boot-starter-web</artifactId>
+                    </dependency>
+                    <!-- 阿里云短信服务 -->
+                    <dependency>
+                              <groupId>com.aliyun</groupId>
+                              <artifactId>aliyun-java-sdk-core</artifactId>
+                    </dependency>
+                    <!-- 验证码 -->
+                    <dependency>
+                              <groupId>com.github.whvcse</groupId>
+                              <artifactId>easy-captcha</artifactId>
+                    </dependency>
+                    <!-- 邮件 -->
+                    <dependency>
+                              <groupId>javax.mail</groupId>
+                              <artifactId>mail</artifactId>
+                    </dependency>
+                    <!-- 公共模块 -->
+                    <dependency>
+                              <groupId>com.ycw</groupId>
+                              <artifactId>cloud-common</artifactId>
+                    </dependency>
+                    <!-- 动态数据源 -->
+                    <dependency>
+                              <groupId>com.ycw</groupId>
+                              <artifactId>cloud-datasource</artifactId>
+                    </dependency>
+                    <!-- 操作日志 -->
+                    <dependency>
+                              <groupId>com.ycw</groupId>
+                              <artifactId>cloud-operatelog</artifactId>
+                    </dependency>
+                    <!-- 缓存模块 -->
+                    <dependency>
+                              <groupId>com.ycw</groupId>
+                              <artifactId>cloud-redis</artifactId>
+                    </dependency>
+          </dependencies>
+          <build>
+                    <plugins>
+                              <plugin>
+                                        <groupId>org.springframework.boot</groupId>
+                                        <artifactId>spring-boot-maven-plugin</artifactId>
+                                        <version>2.3.7.RELEASE</version>
+                                        <configuration>
+                                                  <!-- 指定该Main Class为全局的唯一入口 -->
+                                                  <mainClass>com.ycw.auth.AuthApplication</mainClass>
+                                                  <layout>ZIP</layout>
+                                        </configuration>
+                                        <executions>
+                                                  <execution>
+                                                            <goals>
+                                                                      <goal>repackage</goal><!--可以把依赖的包都打包到生成的Jar包中-->
+                                                            </goals>
+                                                  </execution>
+                                        </executions>
+                              </plugin>
+
+                              <!--docker镜像build插件-->
+                              <plugin>
+                                        <groupId>com.spotify</groupId>
+                                        <artifactId>docker-maven-plugin</artifactId>
+                                        <version>1.2.0</version>
+                                        <configuration>
+                                                  <!-- 注意imageName一定要是符合正则[a-z0-9-_.]的，否则构建不会成功 -->
+                                                  <imageName>${project.artifactId}</imageName>
+                                                  <dockerDirectory>${project.basedir}/src/main/resources
+                                                  </dockerDirectory>
+                                                  <rm>true</rm>
+                                                  <resources>
+                                                            <resource>
+                                                                      <targetPath>/</targetPath>
+                                                                      <directory>${project.build.directory}</directory>
+                                                                      <include>${project.build.finalName}.jar</include>
+                                                            </resource>
+                                                  </resources>
+                                        </configuration>
+                              </plugin>
+                    </plugins>
+          </build>
+</project>
