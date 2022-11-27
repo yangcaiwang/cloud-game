@@ -1,5 +1,6 @@
 package com.ycw.gateway.handler;
 
+import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.web.reactive.error.ErrorWebExceptionHandler;
@@ -20,9 +21,8 @@ import reactor.core.publisher.Mono;
 @Configuration
 public class GatewayExceptionHandler implements ErrorWebExceptionHandler {
     private static final Logger log = LoggerFactory.getLogger(GatewayExceptionHandler.class);
-
     @Override
-    public Mono<Void> handle(ServerWebExchange exchange, Throwable ex) {
+    public @NotNull Mono<Void> handle(ServerWebExchange exchange, @NotNull Throwable ex) {
         ServerHttpResponse response = exchange.getResponse();
 
         if (exchange.getResponse().isCommitted()) {

@@ -1,11 +1,11 @@
 package com.ycw.auth.handle;
 
-import com.ycw.common.AuthUserDetails;
+import com.ycw.auth.util.AuthUserDetails;
 import com.ycw.common.enums.LoginType;
+import com.ycw.common.enums.UserType;
 import com.ycw.common.response.R;
 import com.ycw.common.utils.JwtTokenUtil;
-import com.ycw.common.utils.AuthUtil;
-import org.springframework.beans.factory.annotation.Value;
+import com.ycw.auth.util.AuthUtil;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
@@ -30,7 +30,7 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
             //存储认证信息
             SecurityContextHolder.getContext().setAuthentication(authentication);
             //生成token
-            String s = JwtTokenUtil.generateToken(userDetail);
+            String s = JwtTokenUtil.generateToken(userDetail.getUserId().longValue(), userDetail.getUsername(), UserType.SYS_USER);
             // 是短信登录返回token
             if (LoginType.SMS.equals(userDetail.getLoginType())) {
                 AuthUtil.writeJavaScript(R.ok(s), response);

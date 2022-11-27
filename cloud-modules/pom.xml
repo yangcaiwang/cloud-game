@@ -13,14 +13,9 @@
           <modules>
                     <module>cloud-common</module>
                     <module>cloud-datasource</module>
+                    <module>cloud-grpc</module>
                     <module>cloud-operatelog</module>
                     <module>cloud-redis</module>
+                    <module>cloud-openfeign</module>
           </modules>
-          <dependencies>
-                    <!--spring security依赖-->
-                    <dependency>
-                              <groupId>org.springframework.boot</groupId>
-                              <artifactId>spring-boot-starter-security</artifactId>
-                    </dependency>
-          </dependencies>
 </project>

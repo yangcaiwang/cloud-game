@@ -1,11 +1,7 @@
 package com.ycw.common.constant;
 
-/**
- * 返回状态码
- *
- * @author ai-cloud
- */
 public class Constants {
+    //===========================返回状态码常量========================
     /**
      * 成功标记
      */
@@ -15,6 +11,7 @@ public class Constants {
      * 失败标记
      */
     public static final int FAIL = 500;
+
     /**
      * http请求
      */
@@ -31,39 +28,41 @@ public class Constants {
     public static final String UTF8 = "UTF-8";
 
     /**
-     * 对象创建成功
+     * 邮件
      */
-    public static final int CREATED = 201;
+    public static final String RESET_MAIL = "MAIL";
 
     /**
-     * 请求已经被接受
+     * 验证码
      */
-    public static final int ACCEPTED = 202;
+    public static final String IMAGE_KEY = "IMAGE:KEY:";
+
+
+    //===========================权限相关常量=============
+    /**
+     * 用户ID字段
+     */
+    public static final String USERID = "userId";
 
     /**
-     * 操作已经执行成功，但是没有返回数据
+     * 用户名字段
      */
-    public static final int NO_CONTENT = 204;
+    public static final String USERNAME = "username";
 
     /**
-     * 资源已被移除
+     * 用户名字段
      */
-    public static final int MOVED_PERM = 301;
+    public static final String USER_TYPE = "userType";
 
     /**
-     * 重定向
+     * 授权信息字段
      */
-    public static final int SEE_OTHER = 303;
+    public static final String AUTHORIZATION = "authorization";
 
     /**
-     * 资源没有被修改
+     * 权限列表
      */
-    public static final int NOT_MODIFIED = 304;
-
-    /**
-     * 参数列表错误（缺少，格式不匹配）
-     */
-    public static final int BAD_REQUEST = 400;
+    public static final String AUTHORITIES = "authorities";
 
     /**
      * 未授权
@@ -75,43 +74,25 @@ public class Constants {
      */
     public static final int FORBIDDEN = 403;
 
-    /**
-     * 资源，服务未找到
-     */
-    public static final int NOT_FOUND = 404;
+
+    //===========================jwt相关常量=============
 
     /**
-     * 不允许的http方法
+     * 创建时间
      */
-    public static final int BAD_METHOD = 405;
+    public static final String CREATED = "created";
 
     /**
-     * 资源冲突，或者资源被锁
+     * 密钥
      */
-    public static final int CONFLICT = 409;
+    public static final String SECRET = "abcdefgh";
 
     /**
-     * 不支持的数据，媒体类型
+     * 有效期1小时
      */
-    public static final int UNSUPPORTED_TYPE = 415;
+    public static final long EXPIRE_TIME = 60 * 60 * 1000;
 
-    /**
-     * 系统内部错误
-     */
-    public static final int ERROR = 500;
+    public static final String TOKEN_HEADER = "Authorization";
 
-    /**
-     * 接口未实现
-     */
-    public static final int NOT_IMPLEMENTED = 501;
-
-    /**
-     * 邮件
-     */
-    public static final String RESET_MAIL = "MAIL";
-
-    /**
-     * 验证码
-     */
-    public static final String IMAGE_KEY = "IMAGE:KEY:";
+    public static final String TOKEN_HEAD = "Bearer ";
 }

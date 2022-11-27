@@ -1,12 +1,13 @@
 package com.ycw.common.context;
 
 import com.alibaba.ttl.TransmittableThreadLocal;
-import com.ycw.common.constant.SecurityConstants;
 import com.ycw.common.converter.Convert;
 import com.ycw.common.utils.StringUtil;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+
+import static com.ycw.common.constant.Constants.*;
 
 /**
  * 获取当前线程变量中的 用户id、用户名称、Token等信息
@@ -46,27 +47,27 @@ public class AuthContextHolder {
     }
 
     public static String getUserId() {
-        return get(SecurityConstants.DETAILS_USER_ID);
+        return get(USERID);
     }
 
     public static void setUserId(String account) {
-        set(SecurityConstants.DETAILS_USER_ID, account);
+        set(USERID, account);
     }
 
     public static String getUserName() {
-        return get(SecurityConstants.DETAILS_USERNAME);
+        return get(USERNAME);
     }
 
     public static void setUserName(String username) {
-        set(SecurityConstants.DETAILS_USERNAME, username);
+        set(USERNAME, username);
     }
 
     public static String getUserType() {
-        return get(SecurityConstants.DETAILS_USER_TYPE);
+        return get(USER_TYPE);
     }
 
     public static void setUserType(String userKey) {
-        set(SecurityConstants.DETAILS_USER_TYPE, userKey);
+        set(USER_TYPE, userKey);
     }
 
     public static void remove() {

@@ -5,7 +5,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.ycw.auth.ops.system.domain.SysDictItem;
 import com.ycw.auth.ops.system.service.SysDictItemService;
 import com.ycw.common.response.R;
-import log.annotation.OperateLog;
+import com.ycw.operatelog.annotation.OperateLog;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;

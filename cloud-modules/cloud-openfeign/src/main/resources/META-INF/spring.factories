@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.ycw.openfeign.config.FeignOkhttpConfig,\
+  com.ycw.openfeign.entity.OkhttpProperties

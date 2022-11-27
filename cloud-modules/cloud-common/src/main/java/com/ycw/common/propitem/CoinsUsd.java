@@ -9,8 +9,7 @@ public class CoinsUsd extends PropItemStoreStruct {
     private Long number;
     private ItemTypeConfigEnum itemTypeConfigEnum = ItemTypeConfigEnum.CoinsUsd;
 
-    @Override
-    public CoinsUsd buildPropItemStoreStruct(String value) {
+    public static CoinsUsd buildPropItemStoreStruct(String value) {
         CoinsUsd coinsUsd = new CoinsUsd();
         coinsUsd.setNumber(Long.parseLong(value));
         return coinsUsd;

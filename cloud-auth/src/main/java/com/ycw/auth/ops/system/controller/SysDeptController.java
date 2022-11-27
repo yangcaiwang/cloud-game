@@ -4,7 +4,7 @@ import com.ycw.auth.ops.system.domain.SysDept;
 import com.ycw.auth.ops.system.dto.DeptDto;
 import com.ycw.auth.ops.system.service.SysDeptService;
 import com.ycw.common.response.R;
-import log.annotation.OperateLog;
+import com.ycw.operatelog.annotation.OperateLog;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;

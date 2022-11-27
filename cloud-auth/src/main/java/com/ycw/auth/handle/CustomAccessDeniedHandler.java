@@ -2,7 +2,7 @@ package com.ycw.auth.handle;
 
 import cn.hutool.http.HttpStatus;
 import com.ycw.common.response.R;
-import com.ycw.common.utils.AuthUtil;
+import com.ycw.auth.util.AuthUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.web.access.AccessDeniedHandler;

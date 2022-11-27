@@ -1,0 +1,27 @@
+server:
+  port: 9002
+grpc:
+  server:
+    port: 9092
+    # 是否启动保持连接（默认false）
+    enableKeepAlive: true
+spring:
+  application:
+    name: cloud-mailbox
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      username: nacos
+      password: nacos
+      discovery:
+        server-addr: 43.138.76.94:8848
+      config:
+        server-addr: 43.138.76.94:8848
+        file-extension: yml
+        namespace: public
+        # 共享配置文件
+        shared-configs:
+          - data-id: share-config.yml
+            group: DEFAULT_GROUP
+            refresh: true

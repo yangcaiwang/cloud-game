@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+          <parent>
+                    <artifactId>cloud-modules</artifactId>
+                    <groupId>com.ycw</groupId>
+                    <version>1.0-SNAPSHOT</version>
+          </parent>
+          <modelVersion>4.0.0</modelVersion>
+          <artifactId>cloud-grpc</artifactId>
+          <dependencies>
+                    <!-- gRPC依赖 -->
+                    <dependency>
+                              <groupId>io.grpc</groupId>
+                              <artifactId>grpc-netty-shaded</artifactId>
+                              <scope>runtime</scope>
+                    </dependency>
+                    <dependency>
+                              <groupId>io.grpc</groupId>
+                              <artifactId>grpc-protobuf</artifactId>
+                    </dependency>
+                    <dependency>
+                              <groupId>io.grpc</groupId>
+                              <artifactId>grpc-stub</artifactId>
+                    </dependency>
+
+                    <!-- protobuf依赖 -->
+                    <dependency>
+                              <groupId>com.google.protobuf</groupId>
+                              <artifactId>protobuf-java-util</artifactId>
+                    </dependency>
+                    <!-- prevent downgrade via protobuf-java-util -->
+                    <dependency>
+                              <groupId>com.google.code.gson</groupId>
+                              <artifactId>gson</artifactId>
+                    </dependency>
+          </dependencies>
+
+          <profiles>
+                    <profile>
+                              <id>grpc-generate</id>
+                              <build>
+                                        <plugins>
+                                                  <!-- grpc代码生成插件 -->
+                                                  <plugin>
+                                                            <groupId>org.xolstice.maven.plugins</groupId>
+                                                            <artifactId>protobuf-maven-plugin</artifactId>
+                                                            <version>0.6.1</version>
+                                                            <configuration>
+                                                                      <protocArtifact>
+                                                                                com.google.protobuf:protoc:${protoc.version}:exe:${os.detected.classifier}
+                                                                      </protocArtifact>
+                                                                      <pluginId>grpc-java</pluginId>
+                                                                      <pluginArtifact>
+                                                                                io.grpc:protoc-gen-grpc-java:${grpc.version}:exe:${os.detected.classifier}
+                                                                      </pluginArtifact>
+                                                                      <!--默认值，proto源文件路径-->
+                                                                      <protoSourceRoot>src/main/proto</protoSourceRoot>
+                                                                      <!--默认值，proto目标java文件路径-->
+                                                                      <outputDirectory>src/main/java</outputDirectory>
+                                                                      <!--设置是否在生成java文件之前清空outputDirectory的文件，默认值为true，设置为false时也会覆盖同名文件-->
+                                                                      <clearOutputDirectory>false</clearOutputDirectory>
+                                                            </configuration>
+                                                            <executions>
+                                                                      <execution>
+                                                                                <goals>
+                                                                                          <goal>compile</goal>
+                                                                                          <goal>compile-custom</goal>
+                                                                                </goals>
+                                                                      </execution>
+                                                            </executions>
+                                                  </plugin>
+                                                  <plugin>
+                                                            <groupId>org.apache.maven.plugins</groupId>
+                                                            <artifactId>maven-enforcer-plugin</artifactId>
+                                                            <version>1.4.1</version>
+                                                            <executions>
+                                                                      <execution>
+                                                                                <id>enforce</id>
+                                                                                <goals>
+                                                                                          <goal>enforce</goal>
+                                                                                </goals>
+                                                                                <configuration>
+                                                                                          <rules>
+                                                                                                    <requireUpperBoundDeps/>
+                                                                                          </rules>
+                                                                                </configuration>
+                                                                      </execution>
+                                                            </executions>
+                                                  </plugin>
+                                        </plugins>
+                              </build>
+                    </profile>
+          </profiles>
+
+          <build>
+                    <extensions>
+                              <!-- 兼容eclipse和netbeans中protobuf代码生成插件-->
+                              <extension>
+                                        <groupId>kr.motd.maven</groupId>
+                                        <artifactId>os-maven-plugin</artifactId>
+                                        <version>1.6.2</version>
+                              </extension>
+                    </extensions>
+          </build>
+</project>

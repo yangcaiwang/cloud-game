@@ -53,7 +53,7 @@ public class WordServiceImpl implements WordService {
                 return wordStatus;
             }).collect(Collectors.toList());
             Map<Long, String> mapLongStr = wordConfig.getWordReward();
-            List<PropItemStoreStruct> propItemStoreStructList = mapLongStr.entrySet().stream().map(entry -> PropItemStoreStruct.buildPropItemStoreStruct(entry.getKey(), entry.getValue())).collect(Collectors.toList());
+            List<PropItemStoreStruct> propItemStoreStructList = mapLongStr.entrySet().stream().map(entry -> PropItemStoreStruct.PropItemStoresStructFactory.buildPropItemStoreStruct(entry.getKey(), entry.getValue())).collect(Collectors.toList());
             WordUserStatus newWordUserStatus = new WordUserStatus();
             newWordUserStatus.setUserId(1L);
             newWordUserStatus.setCache(new WordCache(wordStatusList, propItemStoreStructList));

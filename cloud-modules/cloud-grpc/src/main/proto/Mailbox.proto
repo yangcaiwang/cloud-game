@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.ycw.grpc";
+option java_outer_classname = "Mailbox";
+
+import "Base.proto";
+
+service MailboxProtoService {
+  // 发送邮件
+  rpc send (SendRequest) returns (SendResponse) {}
+  // 查看邮件
+  rpc Status (StatusRequest) returns (StatusResponse) {}
+  // 领取邮件
+  rpc Collect (CollectRequest) returns (CollectResponse) {}
+}
+
+message SendRequest {
+  repeated MailboxProto mailboxProto = 1;
+}
+
+message SendResponse {
+  int64 sendSuccess = 1;
+}
+
+message StatusRequest {
+  int64 userId = 1;
+}
+
+message StatusResponse {
+  repeated MailboxProto mailboxProto = 1;
+}
+
+message CollectRequest {
+  string mailboxId = 1;
+}
+
+message CollectResponse {
+  int64 collectSuccess = 1;
+}
+
+message MailboxProto {
+  string mailboxId = 1;
+  int64 userId = 2;
+  string title = 3;
+  string body = 4;
+  string appendix = 5;
+  int64 mailType = 6;
+  string mailTypeDescription = 7;
+  int64 collectAt = 8;
+  int64 expiredAt = 9;
+  int64 createAt = 10;
+}

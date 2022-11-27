@@ -1,13 +1,13 @@
 package com.ycw.auth.ops.system.service.impl;
 
 import cn.hutool.core.util.ObjectUtil;
-import com.ycw.auth.config.MyBeanUtil;
-import com.ycw.common.AuthUserDetails;
+import com.ycw.common.utils.SpringBeanUtil;
+import com.ycw.auth.util.AuthUserDetails;
 import com.ycw.common.enums.LoginType;
 import com.ycw.auth.ops.system.domain.SysUser;
 import com.ycw.auth.ops.system.service.SysUserService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.DependsOn;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -24,9 +24,9 @@ import java.util.Set;
  */
 @Slf4j
 @Service
+@DependsOn("springBeanUtil")
 public class UserDetailsServiceImpl implements UserDetailsService {
-    private final SysUserService sysUserService = MyBeanUtil.getBean(SysUserService.class);
-
+    private final SysUserService sysUserService = SpringBeanUtil.getBean(SysUserService.class);
     /**
      * 用户名密码登录
      */
@@ -39,7 +39,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
             log.info("登录用户：" + username + " 不存在.");
             throw new UsernameNotFoundException("登录用户：" + username + " 不存在");
         }
-        System.out.println("加载中～～～～～～");
         Collection<? extends GrantedAuthority> authorities = getUserAuthorities(user.getUserId());
         return new AuthUserDetails(user.getUserId(), username, user.getPassword(), authorities, LoginType.USERNAME);
     }

@@ -12,8 +12,19 @@
           <packaging>pom</packaging>
           <modules>
                     <module>cloud-lobby</module>
+                    <module>cloud-mailbox</module>
           </modules>
           <dependencies>
+                    <dependency>
+                              <groupId>org.springframework.boot</groupId>
+                              <artifactId>spring-boot-starter-test</artifactId>
+                              <scope>test</scope>
+                    </dependency>
+                    <dependency>
+                              <groupId>junit</groupId>
+                              <artifactId>junit</artifactId>
+                              <scope>test</scope>
+                    </dependency>
                     <dependency>
                               <groupId>com.ycw</groupId>
                               <artifactId>cloud-common</artifactId>
@@ -22,10 +33,10 @@
                               <groupId>com.ycw</groupId>
                               <artifactId>cloud-datasource</artifactId>
                     </dependency>
-                    <dependency>
-                              <groupId>com.ycw</groupId>
-                              <artifactId>cloud-operatelog</artifactId>
-                    </dependency>
+<!--                    <dependency>-->
+<!--                              <groupId>com.ycw</groupId>-->
+<!--                              <artifactId>cloud-operatelog</artifactId>-->
+<!--                    </dependency>-->
                     <dependency>
                               <groupId>com.ycw</groupId>
                               <artifactId>cloud-redis</artifactId>

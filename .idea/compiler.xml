@@ -8,11 +8,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="cloud-redis" />
+        <module name="cloud-mailbox" />
         <module name="cloud-operatelog" />
+        <module name="cloud-grpc" />
         <module name="cloud-common" />
         <module name="cloud-datasource" />
         <module name="cloud-auth" />
         <module name="cloud-gateway" />
+        <module name="cloud-openfeign" />
         <module name="cloud-lobby" />
       </profile>
     </annotationProcessing>
@@ -28,6 +31,7 @@
       <module name="datasource" target="1.8" />
       <module name="framework" target="1.8" />
       <module name="log" target="1.8" />
+      <module name="openfeign" target="1.8" />
       <module name="redis" target="1.8" />
     </bytecodeTargetLevel>
   </component>

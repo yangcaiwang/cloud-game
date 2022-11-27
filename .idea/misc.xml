@@ -21,6 +21,7 @@
         <option value="$PROJECT_DIR$/cloud-modules/cloud-ops/pom.xml" />
         <option value="$PROJECT_DIR$/cloud-modules/cloud-security/pom.xml" />
         <option value="$PROJECT_DIR$/cloud-modules/cloud-web/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud-modules/openfeign/pom.xml" />
         <option value="$PROJECT_DIR$/cloud-ops/cloud-security/pom.xml" />
         <option value="$PROJECT_DIR$/cloud-ops/pom.xml" />
       </set>

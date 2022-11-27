@@ -1,0 +1,27 @@
+spring:
+  cloud:
+    gateway:
+      routes: # 网关路由配置
+        - id: cloud-auth
+          uri: lb://cloud-auth
+          order: 1
+          predicates:
+            - Path=/sys/**
+          filters:
+            - StripPrefix=1  #去掉第一层前缀
+        - id: cloud-lobby
+          uri: lb://cloud-lobby
+          order: 2
+          predicates:
+            - Path=/app/lobby/**
+          filters:
+            - StripPrefix=1  #去掉第一层前缀
+        - id: cloud-mailbox
+          uri: lb://cloud-mailbox
+          order: 3
+          predicates:
+            - Path=/app/mailbox/**
+          filters:
+            - StripPrefix=1  #去掉第一层前缀
+
+

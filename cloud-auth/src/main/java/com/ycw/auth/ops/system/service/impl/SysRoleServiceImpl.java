@@ -15,7 +15,7 @@ import com.ycw.auth.ops.system.service.SysRoleDeptService;
 import com.ycw.auth.ops.system.service.SysRoleMenuService;
 import com.ycw.auth.ops.system.service.SysRoleService;
 import com.ycw.auth.ops.system.service.SysUserService;
-import com.ycw.common.utils.AuthUtil;
+import com.ycw.auth.util.AuthUtil;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

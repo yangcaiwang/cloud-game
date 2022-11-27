@@ -12,26 +12,20 @@
           <description>操作日志</description>
           <dependencies>
                     <dependency>
-                              <groupId>com.ycw</groupId>
-                              <artifactId>cloud-common</artifactId>
-                    </dependency>
-                    <dependency>
                               <groupId>org.aspectj</groupId>
                               <artifactId>aspectjrt</artifactId>
                     </dependency>
-                    <!--mybatis-plus 依赖配置-->
                     <dependency>
-                              <groupId>com.baomidou</groupId>
-                              <artifactId>mybatis-plus-boot-starter</artifactId>
+                              <groupId>com.ycw</groupId>
+                              <artifactId>cloud-common</artifactId>
                     </dependency>
                     <dependency>
                               <groupId>com.ycw</groupId>
                               <artifactId>cloud-datasource</artifactId>
                     </dependency>
                     <dependency>
-                              <groupId>org.springframework.boot</groupId>
-                              <artifactId>spring-boot-starter-web</artifactId>
-                              <optional>true</optional>
+                              <groupId>com.ycw</groupId>
+                              <artifactId>cloud-openfeign</artifactId>
                     </dependency>
           </dependencies>
 </project>

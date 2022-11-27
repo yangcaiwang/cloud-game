@@ -3,7 +3,7 @@ package com.ycw.auth.ops.system.controller;
 import com.ycw.auth.ops.system.dto.RoleDto;
 import com.ycw.auth.ops.system.service.SysRoleService;
 import com.ycw.common.response.R;
-import log.annotation.OperateLog;
+import com.ycw.operatelog.annotation.OperateLog;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,7 +1,7 @@
 package com.ycw.auth.handle;
 
 import com.ycw.common.response.R;
-import com.ycw.common.utils.AuthUtil;
+import com.ycw.auth.util.AuthUtil;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.stereotype.Component;

@@ -3,7 +3,6 @@ package com.ycw.common.utils;
 import cn.hutool.core.util.StrUtil;
 import com.alibaba.fastjson.JSONObject;
 import com.ycw.common.constant.Constants;
-import com.ycw.common.constant.SecurityConstants;
 import com.ycw.common.converter.Convert;
 import com.ycw.common.response.R;
 import org.springframework.core.io.buffer.DataBuffer;
@@ -29,6 +28,8 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Objects;
 
+import static com.ycw.common.constant.Constants.USERID;
+
 /**
  * 客户端工具类
  *
@@ -47,7 +48,7 @@ public class ServletUtil {
      * 获取userId
      */
     public static Long getUserId() {
-        String userId = Objects.requireNonNull(getRequest()).getHeader(SecurityConstants.DETAILS_USER_ID);
+        String userId = Objects.requireNonNull(getRequest()).getHeader(USERID);
         return Long.parseLong(userId);
     }
 

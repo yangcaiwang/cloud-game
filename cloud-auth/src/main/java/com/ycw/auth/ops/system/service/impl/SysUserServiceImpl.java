@@ -8,12 +8,13 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.ycw.auth.config.MyBeanUtil;
 import com.ycw.auth.ops.system.service.SysDeptService;
 import com.ycw.auth.ops.system.service.SysMenuService;
 import com.ycw.auth.ops.system.service.SysUserRoleService;
 import com.ycw.auth.ops.system.service.SysUserService;
-import com.ycw.common.AuthUserDetails;
+import com.ycw.common.enums.UserType;
+import com.ycw.common.utils.SpringBeanUtil;
+import com.ycw.auth.util.AuthUserDetails;
 import com.ycw.auth.ops.system.domain.SysUser;
 import com.ycw.auth.ops.system.domain.SysUserRole;
 import com.ycw.auth.ops.system.util.PreUtil;
@@ -21,12 +22,12 @@ import com.ycw.common.enums.DataSourcesType;
 import com.ycw.common.exception.ServiceException;
 import com.ycw.common.utils.JwtTokenUtil;
 import com.ycw.datasource.annotation.DataSource;
+import com.ycw.redis.service.RedisService;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.context.annotation.DependsOn;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -38,8 +39,10 @@ import com.ycw.auth.ops.system.mapper.SysUserMapper;
 
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
+import static com.ycw.common.constant.Constants.AUTHORITIES;
 import static com.ycw.common.exception.enums.GlobalErrorCodeConstants.VALIDATE_PHONE_ALREADY_REGISTER;
 import static com.ycw.common.exception.enums.GlobalErrorCodeConstants.VALIDATE_USERNAME_ALREADY_REGISTER;
 
@@ -52,6 +55,7 @@ import static com.ycw.common.exception.enums.GlobalErrorCodeConstants.VALIDATE_U
  * @since 2019-04-21
  */
 @Service
+@DependsOn("springBeanUtil")
 @DataSource(name = DataSourcesType.SYS)
 public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> implements SysUserService {
 
@@ -62,14 +66,13 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
     @Autowired
     private SysMenuService sysMenuService;
     @Autowired
-    private final AuthenticationManager authenticationManager = MyBeanUtil.getBean(AuthenticationManager.class);
-    @Autowired
-    RedisTemplate redisTemplate;
+    RedisService redisService;
+    private final AuthenticationManager authenticationManager = SpringBeanUtil.getBean(AuthenticationManager.class);
 
     @Override
     public IPage<SysUser> getUsersWithRolePage(Page page, UserDto userDTO) {
 
-        if ( ObjectUtils.anyNotNull(userDTO) && userDTO.getDeptId() != null) {
+        if (ObjectUtils.anyNotNull(userDTO) && userDTO.getDeptId() != null) {
             userDTO.setDeptList(sysDeptService.selectDeptIds(userDTO.getDeptId()));
         }
         return baseMapper.getUserVosPage(page, userDTO);
@@ -154,9 +157,11 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
         Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));
         //存储认证信息
         SecurityContextHolder.getContext().setAuthentication(authentication);
-        //生成token
         AuthUserDetails userDetail = (AuthUserDetails) authentication.getPrincipal();
-        return JwtTokenUtil.generateToken(userDetail);
+        // 权限信息放入redis
+        redisService.setCacheObject(AUTHORITIES + userDetail.getUserId(), authentication, 1L, TimeUnit.DAYS);
+        //生成token
+        return JwtTokenUtil.generateToken(userDetail.getUserId().longValue(), userDetail.getUsername(), UserType.SYS_USER);
     }
 
     @Transactional(rollbackFor = Exception.class)

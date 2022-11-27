@@ -1,5 +1,8 @@
 package com.ycw.common.enums;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
 import java.util.Arrays;
 import java.util.Map;
 import java.util.stream.Collectors;

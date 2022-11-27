@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProtobufLanguageSettings">
+    <option name="autoConfigEnabled" value="false" />
+    <option name="importPathEntries">
+      <list>
+        <ImportPathEntry>
+          <option name="location" value="file://$PROJECT_DIR$/cloud-gateway/src/main/java" />
+        </ImportPathEntry>
+        <ImportPathEntry>
+          <option name="location" value="file://$PROJECT_DIR$/cloud-gateway/src/main/resources" />
+        </ImportPathEntry>
+        <ImportPathEntry>
+          <option name="location" value="file://$PROJECT_DIR$/cloud-modules/cloud-datasource/src/main/java" />
+        </ImportPathEntry>
+        <ImportPathEntry>
+          <option name="location" value="file://$PROJECT_DIR$/cloud-modules/cloud-datasource/src/main/resources" />
+        </ImportPathEntry>
+        <ImportPathEntry>
+          <option name="location" value="file://$PROJECT_DIR$/cloud-auth/src/main/resources" />
+        </ImportPathEntry>
+        <ImportPathEntry>
+          <option name="location" value="file://$PROJECT_DIR$/cloud-auth/src/main/java" />
+        </ImportPathEntry>
+        <ImportPathEntry>
+          <option name="location" value="file://$PROJECT_DIR$/cloud-modules/cloud-operatelog/src/main/java" />
+        </ImportPathEntry>
+        <ImportPathEntry>
+          <option name="location" value="file://$PROJECT_DIR$/cloud-modules/cloud-redis/src/main/resources" />
+        </ImportPathEntry>
+        <ImportPathEntry>
+          <option name="location" value="file://$PROJECT_DIR$/cloud-modules/cloud-redis/src/main/java" />
+        </ImportPathEntry>
+        <ImportPathEntry>
+          <option name="location" value="file://$PROJECT_DIR$/cloud-modules/cloud-grpc/src/main/java" />
+        </ImportPathEntry>
+        <ImportPathEntry>
+          <option name="location" value="file://$PROJECT_DIR$/cloud-app/cloud-lobby/src/main/java" />
+        </ImportPathEntry>
+        <ImportPathEntry>
+          <option name="location" value="file://$PROJECT_DIR$/cloud-app/cloud-lobby/src/main/resources" />
+        </ImportPathEntry>
+        <ImportPathEntry>
+          <option name="location" value="file://$PROJECT_DIR$/cloud-modules/cloud-common/src/main/java" />
+        </ImportPathEntry>
+        <ImportPathEntry>
+          <option name="location" value="file://$PROJECT_DIR$/cloud-app/cloud-mailbox/src/test/java" />
+        </ImportPathEntry>
+        <ImportPathEntry>
+          <option name="location" value="file://$PROJECT_DIR$/cloud-app/cloud-mailbox/src/main/java" />
+        </ImportPathEntry>
+        <ImportPathEntry>
+          <option name="location" value="file://$PROJECT_DIR$/cloud-app/cloud-mailbox/src/main/resources" />
+        </ImportPathEntry>
+        <ImportPathEntry>
+          <option name="location" value="file://$USER_HOME$/Library/Caches/JetBrains/IdeaIC2022.1/protoeditor" />
+        </ImportPathEntry>
+        <ImportPathEntry>
+          <option name="location" value="file://$PROJECT_DIR$" />
+        </ImportPathEntry>
+        <ImportPathEntry>
+          <option name="location" value="file://$PROJECT_DIR$/cloud-modules/cloud-grpc/src/main/proto" />
+        </ImportPathEntry>
+      </list>
+    </option>
+    <option name="descriptorPath" value="google/protobuf/descriptor.proto" />
+  </component>
+</project>
