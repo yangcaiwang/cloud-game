@@ -31,7 +31,6 @@
                               <artifactId>cloud-grpc</artifactId>
                     </dependency>
           </dependencies>
-
           <build>
                     <plugins>
                               <plugin>
